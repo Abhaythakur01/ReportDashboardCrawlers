@@ -1,0 +1,172 @@
+# Race-level metadata for cross-cutting fallbacks.
+#
+# Each race is keyed by race_id (the slug used in race_urls.json).
+# Fields:
+#   wa_competition_id : Latest known World Athletics competition ID for the
+#                       race. Used as a podium/elite-results fallback when
+#                       the official scraper can't extract them. Bump to
+#                       the current year's ID once WA publishes it; the
+#                       fallback then auto-updates the report.
+#   aims_race_id      : aims-worldrunning.org/races/<id>.html for the
+#                       AIMS member entry. Used as a finisher-count fallback
+#                       via that race's recap article in Distance Running.
+#
+# WA IDs collected from the WA Label Road Races calendar (2026 season).
+# When a race hasn't yet run, the WA fallback returns nothing silently.
+
+# January
+10k-valencia-ibercaja-by-kiprun:
+  wa_competition_id: 7235984
+aramco-houston-half-marathon:
+  wa_competition_id: 7236794
+c-d-xiamen-marathon:
+  wa_competition_id: 7235565
+chevron-houston-marathon:
+  wa_competition_id: 7235560
+doha-marathon-by-ooredoo:
+  wa_competition_id: 7235566
+chang-an-automobile-chongqing-marathon:
+  wa_competition_id: 7235935
+standard-chartered-hong-kong-marathon:
+  wa_competition_id: 7235568
+osaka-women-s-marathon:
+  wa_competition_id: 7235936
+
+# February
+dubai-marathon:
+  wa_competition_id: 7237510
+burj2burj-half-marathon:
+  wa_competition_id: 7237869
+access-bank-lagos-city-marathon:
+  wa_competition_id: 7235572
+ras-al-khaimah-half-marathon:
+  wa_competition_id: 7237781
+hyundai-mitja-marat-de-barcelona-by-brooks:
+  wa_competition_id: 7237513
+daegu-marathon:
+  wa_competition_id: 7235573
+osaka-marathon:
+  wa_competition_id: 7235570
+
+# March
+tokyo-marathon:
+  wa_competition_id: 7236397
+  aims_race_id: 660
+hoka-semi-de-paris:
+  wa_competition_id: 7236007
+nagoya-women-s-marathon:
+  wa_competition_id: 7236072
+meishan-renshou-half-marathon:
+  wa_competition_id: 7235697
+new-taipei-city-wan-jin-shi-marathon:
+  wa_competition_id: 7235571
+seoul-marathon:
+  wa_competition_id: 7235569
+shanghai-half-marathon:
+  wa_competition_id: 7236073
+united-airlines-nyc-half:
+  wa_competition_id: 7237506
+zurich-marat-de-barcelona:
+  wa_competition_id: 7236009
+wuxi-marathon:
+  wa_competition_id: 7235574
+generali-prague-half-marathon:
+  wa_competition_id: 7236038
+generali-berliner-halbmarathon:
+  wa_competition_id: 7237042
+  aims_race_id: 694
+yangzhou-half-marathon:
+  wa_competition_id: 7235575
+edp-lisbon-half-marathon:
+  wa_competition_id: 7236103
+  aims_race_id: 680
+
+# April
+nn-marathon-rotterdam:
+  wa_competition_id: 7235576
+  aims_race_id: 701
+schneider-electric-marathon-de-paris:
+  wa_competition_id: 7235597
+istanbul-half-marathon:
+  wa_competition_id: 7236079    # 2026 (was 7220354 for 2025)
+  aims_race_id: 10054
+baa-boston-marathon:
+  wa_competition_id: 7235561
+  aims_race_id: 707
+gifu-half-marathon:
+  wa_competition_id: 7236081
+  aims_race_id: 1122
+tcs-london-marathon:
+  wa_competition_id: 7235562
+
+# May
+prague-marathon:
+  wa_competition_id: 7236039
+  aims_race_id: 730
+durban-international-marathon:
+  wa_competition_id: 7236401
+okpekpe-10km-road-race:
+  wa_competition_id: 7241271
+lanzhou-marathon:
+  wa_competition_id: 7235588
+  aims_race_id: 1157
+cape-town-city-marathon:
+  wa_competition_id: 7237458
+adidas-stockholm-marathon:
+  wa_competition_id: 7238741
+  aims_race_id: 745
+
+# June
+bank-of-america-chicago-13-1:
+  wa_competition_id: 7238745
+jakarta-running-festival-half-marathon:
+  wa_competition_id: 7236427
+
+# August
+tcs-sydney-marathon-presented-by-asics:
+  wa_competition_id: 7235579
+mexico-city-marathon-telcel:
+  wa_competition_id: 7235589
+
+# September
+bmw-berlin-marathon:
+  wa_competition_id: 7235580
+  aims_race_id: 822
+
+# October
+bank-of-america-chicago-marathon:
+  wa_competition_id: 7235563
+bank-of-china-beijing-marathon:
+  wa_competition_id: 7235591
+nlb-ljubljana-marathon:
+  wa_competition_id: 7235593
+yellow-river-estuary-dongying-marathon:
+  wa_competition_id: 7235592
+tcs-toronto-waterfront-marathon:
+  wa_competition_id: 7238226
+medio-marathon-valencia-trinidad-alfonso-zurich:
+  wa_competition_id: 7236005
+shanghai-elite-10k-race:
+  wa_competition_id: 7236801
+
+# November
+istanbul-marathon:
+  wa_competition_id: 7235596
+
+# December
+marat-n-valencia-trinidad-alfonso-zurich:
+  wa_competition_id: 7235578
+shanghai-marathon:
+  wa_competition_id: 7235577
+byd-singapore-international-marathon-presented-by-adidas:
+  wa_competition_id: 7235595
+shenzhen-marathon:
+  wa_competition_id: 7235585
+adnoc-abu-dhabi-marathon:
+  wa_competition_id: 7235587
+bangsaen21:
+  wa_competition_id: 7238772
+guangzhou-marathon:
+  wa_competition_id: 7235586
+taipei-marathon:
+  wa_competition_id: 7235584

@@ -1,0 +1,54 @@
+Month  Races   Filled    Total       %  Worst race                                                  
+------------------------------------------------------------------------------------------------------------------------
+GET https://dohamarathon.qa/ failed: HTTPSConnectionPool(host='dohamarathon.qa', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000221B3ADDBD0>: Failed to resolve 'dohamarathon.qa' ([Errno 11001] getaddrinfo failed)"))
+    1      8      122      176   69.3%  Osaka Women's Marathon (36%)
+GET https://daegumarathon.com/ failed: HTTPSConnectionPool(host='daegumarathon.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)')))
+Browser GET https://daegumarathon.com/ failed: Page.goto: SEC_ERROR_UNKNOWN_ISSUER
+Call log:
+  - navigating to "https://daegumarathon.com/", waiting until "domcontentloaded"
+
+    2      9      114      198   57.6%  XL Medio Maratón Internacional Guadalajara Electrolit (18%)
+GET https://www.taipeicitymarathon.com/ failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/
+GET https://www.wxim.org/ failed: HTTPSConnectionPool(host='www.wxim.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000221B3ADC190>: Failed to resolve 'www.wxim.org' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://www.wxim.org/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://www.wxim.org/", waiting until "domcontentloaded"
+
+    3     14      193      308   62.7%  Nagoya Women's Marathon (45%)
+    4      6      115      132   87.1%  Istanbul Half Marathon (64%)
+    5      6       84      132   63.6%  Okpekpe 10KM Road Race (45%)
+    6      2       16       44   36.4%  10KM Port Gentil (23%)
+    7  ERROR: No shortlisted races for 2026-07
+GET https://www.maratoncdmx.com/ failed: HTTPSConnectionPool(host='www.maratoncdmx.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000221B5EF20D0>, 'Connection to www.maratoncdmx.com timed out. (connect timeout=20)'))
+    8      2       18       44   40.9%  Mexico City Marathon Telcel (27%)
+    9      2       26       44   59.1%  Taiyuan Marathon (27%)
+GET https://jakartarunningfestival.com/ failed: HTTPSConnectionPool(host='jakartarunningfestival.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000221B5EF3B10>: Failed to resolve 'jakartarunningfestival.com' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://jakartarunningfestival.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://jakartarunningfestival.com/", waiting until "domcontentloaded"
+
+   10     10       93      220   42.3%  Jakarta Running Festival - Half Marathon (18%)
+GET https://www.hzmarathon.com/ failed: HTTPSConnectionPool(host='www.hzmarathon.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000221B6577C50>: Failed to resolve 'www.hzmarathon.com' ([Errno 11002] getaddrinfo failed)"))
+Browser GET https://www.hzmarathon.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://www.hzmarathon.com/", waiting until "domcontentloaded"
+
+   11      3       19       66   28.8%  Hangzhou Marathon (23%)
+GET https://www.shmarathon.com/ failed: HTTPSConnectionPool(host='www.shmarathon.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000221B7AA34D0>, 'Connection to www.shmarathon.com timed out. (connect timeout=20)'))
+GET https://www.szmarathon.com/ failed: HTTPSConnectionPool(host='www.szmarathon.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000221B5EF0690>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+GET https://www.gz-marathon.com/ failed: HTTPSConnectionPool(host='www.gz-marathon.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000221B7AA34D0>: Failed to resolve 'www.gz-marathon.com' ([Errno 11001] getaddrinfo failed)"))
+   12      8       67      176   38.1%  Bangsaen21 (18%)
+------------------------------------------------------------------------------------------------------------------------
+ YEAR             867     1540   56.3%
+
+Bottom 10 races (lowest fill):
+  M02  XL Medio Maratón Internacional Guadalajara Electro  OV 2/8  SP 2/3  HL 0/5  PD 0/6  -> 18%
+  M10  Jakarta Running Festival - Half Marathon            OV 3/8  SP 1/3  HL 0/5  PD 0/6  -> 18%
+  M12  Bangsaen21                                          OV 3/8  SP 1/3  HL 0/5  PD 0/6  -> 18%
+  M02  10K Facsa Castellón                                 OV 3/8  SP 2/3  HL 0/5  PD 0/6  -> 23%
+  M06  10KM Port Gentil                                    OV 2/8  SP 3/3  HL 0/5  PD 0/6  -> 23%
+  M11  Hangzhou Marathon                                   OV 4/8  SP 1/3  HL 0/5  PD 0/6  -> 23%
+  M08  Mexico City Marathon Telcel                         OV 4/8  SP 2/3  HL 0/5  PD 0/6  -> 27%
+  M09  Taiyuan Marathon                                    OV 3/8  SP 3/3  HL 0/5  PD 0/6  -> 27%
+  M10  Bank of China Beijing Marathon                      OV 3/8  SP 3/3  HL 0/5  PD 0/6  -> 27%
+  M10  Yellow River Estuary Dongying Marathon              OV 3/8  SP 3/3  HL 0/5  PD 0/6  -> 27%

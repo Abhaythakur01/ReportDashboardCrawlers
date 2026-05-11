@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Race Report Dashboard — Initium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased" x-data="dashboard()" x-init="init()">
+
+  <!-- BACKDROP GRADIENT -->
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-slate-50 to-rose-50"></div>
+    <div class="absolute -top-40 -right-32 w-[44rem] h-[44rem] bg-indigo-200/40 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-32 w-[36rem] h-[36rem] bg-rose-200/40 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- TOPBAR -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-rose-500 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/30">RR</div>
+        <div>
+          <div class="font-bold tracking-tight text-lg">Race Report Dashboard</div>
+          <div class="text-xs text-slate-500 -mt-0.5">Global running events · Initium Productions</div>
+        </div>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <span class="hidden md:inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Live · 2026 calendar
+        </span>
+        <button @click="$refs.reportsPanel.scrollIntoView({behavior:'smooth'})" class="text-sm font-medium px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+          Generate report →
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 lg:px-10 py-10 space-y-12">
+
+    <!-- HERO -->
+    <section class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-rose-900 p-8 lg:p-12 text-white shadow-xl">
+        <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_60%)]"></div>
+        <div class="relative">
+          <div class="text-xs uppercase tracking-[0.2em] text-white/70">Monthly Intelligence</div>
+          <h1 class="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">
+            <span x-text="summary.total"></span> shortlisted races,<br/>
+            tracked from official sources only.
+          </h1>
+          <p class="mt-4 text-white/80 max-w-xl">
+            Calendar, results, sponsors and highlights — pulled directly from each race's official site,
+            assembled into a downloadable monthly report that mirrors your existing format.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#races" class="px-5 py-2.5 rounded-xl bg-white text-slate-900 font-medium hover:bg-white/90 transition">Browse calendar</a>
+            <a href="#reports" class="px-5 py-2.5 rounded-xl bg-white/10 ring-1 ring-white/20 text-white font-medium hover:bg-white/15 transition">Download a report</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <template x-for="kpi in kpis" :key="kpi.label">
+          <div class="rounded-2xl bg-white p-5 ring-1 ring-slate-200 shadow-sm">
+            <div class="text-xs font-medium uppercase tracking-wide text-slate-500" x-text="kpi.label"></div>
+            <div class="mt-2 text-3xl font-bold tracking-tight" x-text="kpi.value"></div>
+            <div class="mt-1 text-xs" :class="kpi.tone" x-text="kpi.hint"></div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <div class="font-semibold">Races per month</div>
+            <div class="text-xs text-slate-500">Distribution across the 2026 season</div>
+          </div>
+        </div>
+        <canvas id="chart-month" height="120"></canvas>
+      </div>
+      <div class="rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm p-6">
+        <div class="font-semibold">By category</div>
+        <div class="text-xs text-slate-500 mb-4">Marathon · Half · 10K</div>
+        <canvas id="chart-category" height="200"></canvas>
+      </div>
+    </section>
+
+    <!-- RACES -->
+    <section id="races" class="space-y-6">
+      <div class="flex items-end justify-between flex-wrap gap-4">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">Shortlisted races</h2>
+          <p class="text-sm text-slate-500" x-text="`Showing ${filtered.length} of ${races.length} races`"></p>
+        </div>
+        <div class="flex items-center gap-2 bg-white rounded-xl ring-1 ring-slate-200 p-1 text-sm">
+          <button @click="view='grid'" :class="view==='grid'?'bg-slate-900 text-white':'text-slate-600'" class="px-3 py-1.5 rounded-lg transition">Grid</button>
+          <button @click="view='timeline'" :class="view==='timeline'?'bg-slate-900 text-white':'text-slate-600'" class="px-3 py-1.5 rounded-lg transition">Timeline</button>
+        </div>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm p-4 flex flex-wrap items-center gap-3">
+        <div class="flex-1 min-w-[200px]">
+          <input type="text" x-model="search" placeholder="Search race or city…"
+            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 ring-1 ring-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm" />
+        </div>
+        <select x-model="filters.month" class="px-3 py-2.5 rounded-xl bg-slate-50 ring-1 ring-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="">All months</option>
+          <template x-for="m in 12">
+            <option :value="m" x-text="monthName(m)"></option>
+          </template>
+        </select>
+        <select x-model="filters.country" class="px-3 py-2.5 rounded-xl bg-slate-50 ring-1 ring-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="">All countries</option>
+          <template x-for="c in summary.countries">
+            <option :value="c" x-text="c"></option>
+          </template>
+        </select>
+        <select x-model="filters.label" class="px-3 py-2.5 rounded-xl bg-slate-50 ring-1 ring-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="">All labels</option>
+          <template x-for="l in summary.labels">
+            <option :value="l" x-text="l"></option>
+          </template>
+        </select>
+        <select x-model="filters.category" class="px-3 py-2.5 rounded-xl bg-slate-50 ring-1 ring-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="">All distances</option>
+          <template x-for="c in summary.categories">
+            <option :value="c" x-text="c"></option>
+          </template>
+        </select>
+        <button @click="clearFilters()" class="text-sm text-slate-500 hover:text-slate-900 px-2">Clear</button>
+      </div>
+
+      <!-- GRID -->
+      <div x-show="view==='grid'" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <template x-for="race in filtered" :key="race.id">
+          <article class="group relative rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 hover:shadow-lg transition overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1" :class="labelStripe(race.label)"></div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex flex-col items-center justify-center w-14 h-14 rounded-xl bg-slate-100 shrink-0">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500" x-text="monthShort(race.month)"></div>
+                  <div class="text-xl font-bold leading-none mt-0.5" x-text="dayOf(race.date)"></div>
+                </div>
+                <div class="flex flex-col items-end gap-1.5">
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                    :class="labelPill(race.label)" x-text="race.label"></span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600" x-text="race.country"></span>
+                </div>
+              </div>
+              <h3 class="mt-4 font-semibold leading-tight text-[15px]" x-text="race.name"></h3>
+              <div class="mt-1 text-sm text-slate-500" x-text="race.venue"></div>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-xs text-slate-500" x-text="race.category"></span>
+                <a x-show="race.official_url" :href="race.official_url" target="_blank" rel="noopener"
+                  class="text-xs font-medium text-indigo-600 hover:text-indigo-800">
+                  Official site →
+                </a>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+
+      <!-- TIMELINE -->
+      <div x-show="view==='timeline'" class="space-y-8">
+        <template x-for="(group, idx) in groupedByMonth" :key="group.month">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500" x-text="monthName(group.month)"></div>
+              <div class="text-xs text-slate-400">·</div>
+              <div class="text-xs text-slate-500" x-text="`${group.items.length} race${group.items.length===1?'':'s'}`"></div>
+              <div class="flex-1 h-px bg-slate-200"></div>
+            </div>
+            <div class="space-y-2">
+              <template x-for="race in group.items" :key="race.id">
+                <div class="flex items-center gap-4 p-3 rounded-xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition">
+                  <div class="w-12 text-center">
+                    <div class="text-xs font-bold text-slate-500" x-text="monthShort(race.month)"></div>
+                    <div class="text-xl font-bold" x-text="dayOf(race.date)"></div>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="font-semibold truncate" x-text="race.name"></div>
+                    <div class="text-xs text-slate-500" x-text="`${race.venue} · ${race.country}`"></div>
+                  </div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full" :class="labelPill(race.label)" x-text="race.label"></span>
+                  <span class="text-xs text-slate-400 hidden md:inline" x-text="race.category"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section id="reports" x-ref="reportsPanel" class="rounded-3xl bg-gradient-to-br from-slate-900 to-indigo-900 p-8 lg:p-10 text-white shadow-xl">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-1">
+          <div class="text-xs uppercase tracking-[0.2em] text-white/60">Reports</div>
+          <h2 class="mt-2 text-2xl lg:text-3xl font-bold">Monthly Global Races Report</h2>
+          <p class="mt-3 text-white/70 text-sm">
+            Generates a 4-sheet Excel matching your existing format — Race Overview, Elite Results,
+            Sponsorship &amp; Partnerships, Events' Highlights. Data is fetched from each race's official
+            site only.
+          </p>
+        </div>
+        <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+
+          <div class="rounded-2xl bg-white/10 ring-1 ring-white/15 p-5">
+            <div class="text-sm font-semibold">Generate now</div>
+            <div class="mt-1 text-xs text-white/60">Pick a month, we'll build it.</div>
+            <div class="mt-4 flex gap-2">
+              <input type="month" x-model="genMonth" class="flex-1 px-3 py-2 rounded-lg bg-white/10 ring-1 ring-white/20 text-sm focus:outline-none" />
+              <button @click="generate()" :disabled="generating" class="px-4 py-2 rounded-lg bg-white text-slate-900 font-medium text-sm disabled:opacity-50">
+                <span x-show="!generating">Build →</span>
+                <span x-show="generating">Building…</span>
+              </button>
+            </div>
+            <div x-show="genMessage" class="mt-3 text-xs text-emerald-200" x-text="genMessage"></div>
+          </div>
+
+          <div class="rounded-2xl bg-white/10 ring-1 ring-white/15 p-5">
+            <div class="text-sm font-semibold">Scraper coverage</div>
+            <div class="mt-1 text-xs text-white/60">Per-race extractors against the 2026 calendar.</div>
+            <div class="mt-4">
+              <div class="flex items-end justify-between">
+                <div class="text-3xl font-bold" x-text="scraperStatus.coverage_pct + '%'"></div>
+                <div class="text-xs text-white/60" x-text="`${scraperStatus.implemented?.length || 0} / ${scraperStatus.total_races || 0}`"></div>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-emerald-300 to-teal-300" :style="`width:${scraperStatus.coverage_pct||0}%`"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 rounded-2xl bg-white/10 ring-1 ring-white/15 p-5">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-semibold">Recent reports</div>
+              <button @click="loadReports()" class="text-xs text-white/60 hover:text-white">Refresh</button>
+            </div>
+            <div class="mt-3 divide-y divide-white/10">
+              <template x-for="r in reports" :key="r.name">
+                <div class="py-2.5 flex items-center gap-3 text-sm">
+                  <svg class="w-4 h-4 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                  <div class="flex-1 min-w-0 truncate" x-text="r.name"></div>
+                  <div class="text-xs text-white/50 hidden md:block" x-text="formatDate(r.generated)"></div>
+                  <a :href="`/api/reports/${encodeURIComponent(r.name)}`" class="text-xs font-medium px-3 py-1 rounded-lg bg-white text-slate-900">Download</a>
+                </div>
+              </template>
+              <div x-show="!reports.length" class="py-4 text-xs text-white/50">No reports yet — generate one above.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-8 pb-12 text-center text-xs text-slate-500">
+      Race Report Dashboard · Built for Initium Productions · Data sourced exclusively from official race websites
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

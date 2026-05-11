@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Playwright session logs + console dumps (rebuilt on every browser run)
+.playwright-mcp/
+
+# Local audit snapshots — playwright captures kept for debugging, not source
+snapshots/
+
+# Claude Code local-only settings (project-shared settings.json IS committed)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Excel lock files (created when a workbook is open in Office)
+~$*.xlsx
+~$*.xls
+
+# Local logs / scratch
+*.log
+*.tmp

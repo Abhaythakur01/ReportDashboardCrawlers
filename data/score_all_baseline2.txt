@@ -1,0 +1,81 @@
+Month  Races   Filled    Total       %  Worst race                                                  
+------------------------------------------------------------------------------------------------------------------------
+GET https://dohamarathon.qa/ failed: HTTPSConnectionPool(host='dohamarathon.qa', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C367B4D0>: Failed to resolve 'dohamarathon.qa' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://dohamarathon.qa/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://dohamarathon.qa/", waiting until "domcontentloaded"
+
+    1      8       55      176   31.2%  Osaka Women's Marathon (14%)
+GET https://10kfacsa.com/ failed: HTTPSConnectionPool(host='10kfacsa.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C350FD90>: Failed to resolve '10kfacsa.com' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://10kfacsa.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://10kfacsa.com/", waiting until "domcontentloaded"
+
+GET https://daegumarathon.com/ failed: HTTPSConnectionPool(host='daegumarathon.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)')))
+Browser GET https://daegumarathon.com/ failed: Page.goto: SEC_ERROR_UNKNOWN_ISSUER
+Call log:
+  - navigating to "https://daegumarathon.com/", waiting until "domcontentloaded"
+
+GET https://mediomaratonguadalajara.com/ failed: HTTPSConnectionPool(host='mediomaratonguadalajara.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C350FD90>: Failed to resolve 'mediomaratonguadalajara.com' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://mediomaratonguadalajara.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://mediomaratonguadalajara.com/", waiting until "domcontentloaded"
+
+    2      9       49      198   24.7%  Access Bank Lagos City Marathon (0%)
+GET https://www.athletics.org.cn/ failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+Browser GET https://www.athletics.org.cn/ failed: Page.goto: NS_ERROR_NET_RESET
+Call log:
+  - navigating to "https://www.athletics.org.cn/", waiting until "domcontentloaded"
+
+GET https://www.taipeicitymarathon.com/ failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/
+GET https://www.taipeicitymarathon.com/news.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/news.php
+GET https://www.taipeicitymarathon.com/supply-partners.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/supply-partners.php
+GET https://www.taipeicitymarathon.com/mystory.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/mystory.php
+GET https://www.taipeicitymarathon.com/about.php failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+GET https://www.taipeicitymarathon.com/partner.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/partner.php
+GET https://www.taipeicitymarathon.com/champions.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/champions.php
+GET https://www.taipeicitymarathon.com/sustainabilityhistory.php failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/sustainabilityhistory.php
+GET https://www.taipeicitymarathon.com/news-page.php?id=167 failed: 406 Client Error: Not Acceptable for url: https://www.taipeicitymarathon.com/news-page.php?id=167
+GET https://www.shmarathon.com/ failed: HTTPSConnectionPool(host='www.shmarathon.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206CBB52210>, 'Connection to www.shmarathon.com timed out. (connect timeout=20)'))
+Browser GET https://www.shmarathon.com/ failed: Page.goto: NS_ERROR_NET_TIMEOUT
+Call log:
+  - navigating to "https://www.shmarathon.com/", waiting until "domcontentloaded"
+
+GET https://www.wxim.org/ failed: HTTPSConnectionPool(host='www.wxim.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C6779450>: Failed to resolve 'www.wxim.org' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://www.wxim.org/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://www.wxim.org/", waiting until "domcontentloaded"
+
+    3     14      101      308   32.8%  Nagoya Women's Marathon (14%)
+    4      6       98      132   74.2%  Istanbul Half Marathon (59%)
+    5      6       72      132   54.5%  Okpekpe 10KM Road Race (41%)
+GET https://www.10kmportgentil.com/ failed: HTTPSConnectionPool(host='www.10kmportgentil.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C677A350>: Failed to resolve 'www.10kmportgentil.com' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://www.10kmportgentil.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://www.10kmportgentil.com/", waiting until "domcontentloaded"
+
+    6      2        0       44    0.0%  Bank of America Chicago 13.1 (0%)
+    7  ERROR: No shortlisted races for 2026-07
+GET https://www.maratoncdmx.com/ failed: HTTPSConnectionPool(host='www.maratoncdmx.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206C367B890>, 'Connection to www.maratoncdmx.com timed out. (connect timeout=20)'))
+Browser GET https://www.maratoncdmx.com/ failed: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.maratoncdmx.com/", waiting until "domcontentloaded"
+
+    8      2        2       44    4.5%  Mexico City Marathon Telcel (0%)
+GET https://www.tymarathon.com/ failed: HTTPSConnectionPool(host='www.tymarathon.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206C367B890>, 'Connection to www.tymarathon.com timed out. (connect timeout=20)'))
+Browser GET https://www.tymarathon.com/ failed: Page.goto: NS_ERROR_NET_TIMEOUT
+Call log:
+  - navigating to "https://www.tymarathon.com/", waiting until "domcontentloaded"
+
+    9      2        9       44   20.5%  Taiyuan Marathon (0%)
+GET https://www.dymarathon.com/ failed: HTTPSConnectionPool(host='www.dymarathon.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206CBB51950>: Failed to resolve 'www.dymarathon.com' ([Errno 11002] getaddrinfo failed)"))
+Browser GET https://www.dymarathon.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://www.dymarathon.com/", waiting until "domcontentloaded"
+
+GET https://jakartarunningfestival.com/ failed: HTTPSConnectionPool(host='jakartarunningfestival.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000206C9F4EC10>: Failed to resolve 'jakartarunningfestival.com' ([Errno 11001] getaddrinfo failed)"))
+Browser GET https://jakartarunningfestival.com/ failed: Page.goto: NS_ERROR_UNKNOWN_HOST
+Call log:
+  - navigating to "https://jakartarunningfestival.com/", waiting until "domcontentloaded"
+
+GET https://www.shmarathon.com/ failed: HTTPSConnectionPool(host='www.shmarathon.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000206C9F4EC10>, 'Connection to www.shmarathon.com timed out. (connect timeout=20)'))

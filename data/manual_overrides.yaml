@@ -1,0 +1,924 @@
+# Manual overrides for fields that can't be obtained from any official-or-
+# sanctioning-body source. The fallback chain (native scraper → World
+# Athletics → AIMS) runs first; whatever's left blank can be filled here
+# with an explicit citation. Cite the source so the report's provenance
+# is auditable.
+#
+# Only fields explicitly listed here override; all others stay blank if
+# scraping didn't fill them. Adding a key like `<field>_source` next to a
+# value attaches a citation to the audit log (printed in `notes`).
+#
+# Supported field names match RaceFacts attributes:
+#   inception_year, edition,
+#   finishers_total, finishers_men_pct, finishers_women_pct, finishers_nonbinary_pct,
+#   spectators, volunteers, prize_money_usd,
+#   organizers, title_sponsor, other_sponsors
+#
+# Example (uncomment to apply):
+#
+# istanbul-half-marathon:
+#   finishers_total: 19000
+#   finishers_total_source: "AIMS Distance Running, 'Double triumph in Istanbul', 20 Apr 2026"
+#   spectators: 50000
+#   spectators_source: "İBB Spor İstanbul press release, 2024 edition"
+
+# (intentionally empty — populate as Santosh confirms specific facts)
+
+shanghai-half-marathon:
+  finishers_total: 15000
+  finishers_total_source: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240312/cf772bc39cd74387af239ad5b8c2c616.html (Shanghai Municipal Government, 2024-03-12) — registered field of 15,000 runners; race held 21 Apr 2024"
+  finishers_women_pct: 34
+  finishers_women_pct_source: "https://www.shio.gov.cn/TrueCMS//shxwbgs/voices/content/20240419001705641.htm (Shanghai Information Office, 2024-04-19) — 34% women among 87,000 lottery applicants selected"
+  highlights:
+    - title: "Ethiopian runner sets new record at 2025 Shanghai Half Marathon"
+      url: "https://www.ecns.cn/cns-wire/2025-04-21/detail-iheqvnys2371528.shtml"
+      source: "ECNS / China News Service, 2025-04-21"
+    - title: "Shanghai Half Marathon (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7221899"
+      source: "World Athletics, 2025-04-20"
+    - title: "Shanghai Half Marathon 2025 Results — Watch Athletics"
+      url: "https://www.watchathletics.com/page/6580/results-shanghai-half-marathon-2025"
+      source: "Watch Athletics, 2025-04-20"
+    - title: "Shanghai Half Marathon — AIMS race information"
+      url: "https://aims-worldrunning.org/races/4079.html"
+      source: "AIMS, 2025"
+
+shanghai-elite-10k-race:
+  finishers_total: 6943
+  finishers_total_source: "https://www.shine.cn/feature/entertainment/2410276514/ (Shine, 2024-10-27) — 7,000 participants × 99.19% completion rate"
+  highlights:
+    - title: "Elite runners from overseas dominate 10K race"
+      url: "https://www.shio.gov.cn/TrueCMS/shxwbgs/voices/content/20241027224533399.htm"
+      source: "Shanghai Information Office, 2024-10-27"
+    - title: "Elite runners from overseas dominate 10K race (Putuo District)"
+      url: "https://english.shpt.gov.cn/news/news/3376.shtml"
+      source: "Shanghai Putuo District Government, 2024-10-27"
+    - title: "Elite runners to set off for 10K race on Sunday"
+      url: "https://www.shine.cn/sport/2410252125/"
+      source: "Shine (Shanghai Daily), 2024-10-25"
+    - title: "Shanghai 10K Elite Race (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7210309"
+      source: "World Athletics, 2024-10-27"
+    - title: "Shanghai 10K Elite Race — Live Stream / Coverage"
+      url: "https://www.watchathletics.com/schedule/watchlive/8869"
+      source: "Watch Athletics, 2024-10-27"
+
+new-taipei-city-wan-jin-shi-marathon:
+  finishers_total: 11000
+  finishers_total_source: "https://foreigner.ntpc.gov.tw/home.jsp?act=be4f48068b2b0031&dataserno=7e78e0de0cf5a458574d9f1c24096468&id=4d3574c6b0b14630 (New Taipei City Government, 2024-03-17) — 11,000 runners started, 334 foreign participants from 26 countries"
+
+taipei-marathon:
+  finishers_total: 35614
+  finishers_total_source: "https://taiwannews.com.tw/news/5990985 (Taiwan News, 2024-12-12) — 12,614 marathon + 23,000 half-marathon participants for the 15 Dec 2024 edition"
+  highlights:
+    - title: "Kenyan, Ethiopian runners win 2024 Taipei Marathon"
+      url: "https://focustaiwan.tw/sports/202412150007"
+      source: "Focus Taiwan (CNA), 2024-12-15"
+    - title: "2024 Taipei Marathon attracts record international participants"
+      url: "https://taiwannews.com.tw/news/5990985"
+      source: "Taiwan News, 2024-12-12"
+    - title: "Taipei Marathon 2024 Results"
+      url: "https://www.watchathletics.com/page/6183/results-taipei-marathon-2024"
+      source: "Watch Athletics, 2024-12-15"
+    - title: "Taipei Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207662"
+      source: "World Athletics, 2024-12-15"
+
+united-airlines-nyc-half:
+  finishers_total: 27843
+  finishers_total_source: "https://results.nyrr.org/event/H2024/finishers (NYRR official results, 2024-03-17) — event-record 27,843 finishers, also reported by NYRR press"
+
+daegu-marathon:
+  finishers_total: 15561
+  finishers_total_source: "https://mybestruns.com/DaeguInternationalMarath?b=reat (My Best Runs, 2024-04-07 race) — historical-record 15,561 participants from 12 countries"
+  prize_money_usd: 160000
+  prize_money_usd_source: "https://en.wikipedia.org/wiki/Daegu_Marathon — superseded; primary: https://www.daegu.go.kr/english/index.do?menu_id=00939750 (Daegu Metropolitan Government, 2024) — $160,000 top prize, world's highest in 2024"
+
+wuxi-marathon:
+  finishers_total: 33000
+  finishers_total_source: "https://www.chinadaily.com.cn/a/202403/25/WS66015f22a31082fc043be8eb.html (China Daily, 2024-03-25) — 33,000 runners from 48 countries; 3,423 sub-3-hour"
+  volunteers: 6500
+  volunteers_source: "https://www.chinadaily.com.cn/a/202403/25/WS66015f22a31082fc043be8eb.html (China Daily, 2024-03-25) — 'over 6,500 volunteers' supported the race"
+  highlights:
+    - title: "2025 Wuxi Marathon concludes with record numbers"
+      url: "https://en.wuxi.gov.cn/2025-03/23/c_1080331.htm"
+      source: "Wuxi Municipal Government (English portal), 2025-03-23"
+    - title: "Wuxi Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220359"
+      source: "World Athletics, 2025-03-23"
+    - title: "Wuxi Marathon 2025 Results — Watch Athletics"
+      url: "https://mybestruns.com/WuxiMarathon"
+      source: "My Best Runs, 2025-03-23"
+    - title: "2025 Wuxi Marathon, won by Samsom Amare from Eritrea"
+      url: "http://dehai.org/dehai/dehai-news/522708"
+      source: "Dehai News, 2025-03-23"
+
+bangsaen21:
+  finishers_total: 12000
+  finishers_total_source: "https://worldsmarathons.com/marathon/half-marathon-bangsaen21 (World's Marathons, citing organisers) — 12,000 starters cap maintained for the 15 Dec 2024 edition; >25,000 applications"
+  highlights:
+    - title: "Melak and Moseti win Bangsaen21 Half Marathon"
+      url: "https://worldathletics.org/news/report/bangsaen21-half-marathon-2024-melak-moseti"
+      source: "World Athletics REPORT, 2024-12-15"
+    - title: "Bangsaen21 Half Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208978"
+      source: "World Athletics, 2024-12-15"
+    - title: "Bangsaen21 Half Marathon 2024 — Results"
+      url: "https://www.watchathletics.com/page/6187/results-bangsaen21-half-marathon-2024"
+      source: "Watch Athletics, 2024-12-15"
+    - title: "Bangsaen21 — AIMS race information"
+      url: "https://aims-worldrunning.org/races/10154.html"
+      source: "AIMS, 2024"
+    - title: "Bangsaen21 The Finest Running Event Ever 2024 — Race Result"
+      url: "https://my.raceresult.com/320765/"
+      source: "Race Result official timing, 2024-12-15"
+
+yangzhou-half-marathon:
+  highlights:
+    - title: "Yangzhou Jianzhen Half Marathon ends on high note"
+      url: "http://subsites.chinadaily.com.cn/yangzhoutravel/2025-03/31/c_1082047.htm"
+      source: "China Daily Yangzhou, 2025-03-31"
+    - title: "Yangzhou Jianzhen Half Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220356"
+      source: "World Athletics, 2025-03-30"
+    - title: "Registration opens for Yangzhou Jianzhen Half Marathon 2025"
+      url: "https://govt.chinadaily.com.cn/s/202501/22/WS67a44deb498eec7e1f72e8f0/registration-opens-for-yangzhou-jianzhen-half-marathon-2025.html"
+      source: "China Daily (govt portal), 2025-01-22"
+    - title: "Matata and Chebet break course records in Yangzhou"
+      url: "https://www.infinitysport.asia/news/matata-and-chebet-break-course-records-in-yangzhou/"
+      source: "Infinity Sport Asia, 2025-03-30"
+
+bank-of-america-chicago-13-1:
+  finishers_total: 10000
+  finishers_total_source: "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2024/06/course-records-fall-at-the-third-annual-bank-of-america-chicago-.html (Bank of America Newsroom, 2024-06-09) — 'sold-out field of 10,000 runners' on Chicago's West Side"
+
+yellow-river-estuary-dongying-marathon:
+  finishers_total: 35095
+  finishers_total_source: "http://shandong.chinadaily.com.cn/dongying/2024-10/21/c_1037755.htm (China Daily Shandong, 2024-10-21) — 9,000 full + 12,000 half + 14,095 health-run = 35,095 participants on 20 Oct 2024"
+  highlights:
+    - title: "Yellow River marathon draws hordes to Dongying city"
+      url: "https://regional.chinadaily.com.cn/shandong/dongying/2024-10/21/c_1037755.htm"
+      source: "China Daily Shandong, 2024-10-21"
+    - title: "2024 Yellow River Estuary (Dongying) Marathon Kicks Off"
+      url: "https://www.globenewswire.com/news-release/2024/10/28/2969766/0/en/2024-Yellow-River-Estuary-Dongying-Marathon-Kicks-Off.html"
+      source: "GlobeNewswire / Dongying Municipal release, 2024-10-28"
+    - title: "Yellow River Estuary Dongying Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208921"
+      source: "World Athletics, 2024-10-20"
+    - title: "Yellow River Estuary International Marathon — race summary"
+      url: "https://mybestruns.com/YellowRiverEstuaryIntern?b=prz"
+      source: "My Best Runs, 2024-10-20"
+    - title: "2024 Yellow River Estuary (Dongying) Marathon Kicks Off"
+      url: "https://www.manilatimes.net/2024/10/28/tmt-newswire/globenewswire/2024-yellow-river-estuary-dongying-marathon-kicks-off/1992252"
+      source: "Manila Times / GlobeNewswire, 2024-10-28"
+
+hangzhou-marathon:
+  finishers_total: 36000
+  finishers_total_source: "https://english.news.cn/20241103/e09a2cc04e004740ac97763328252546/c.html (Xinhua, 2024-11-03) — approx. 36,000 participants from across China"
+  prize_money_usd: 54000
+  prize_money_usd_source: "https://www.shine.cn/feature/wellness/2409141263/ (Shine/Hangzhou Marathon preview, 2024-09-14) — top prize US$54,000 (winner US$50,000 + course-record bonus)"
+  highlights:
+    - title: "Highlights of 2024 Hangzhou Marathon"
+      url: "https://english.news.cn/20241103/e09a2cc04e004740ac97763328252546/c.html"
+      source: "Xinhua, 2024-11-03"
+    - title: "Hangzhou Marathon concludes with new records"
+      url: "https://govt.chinadaily.com.cn/s/202411/05/WS67320cf8498eec7e1f727022/hangzhou-marathon-concludes-with-new-records.html"
+      source: "China Daily (govt portal), 2024-11-05"
+    - title: "Hangzhou Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208923"
+      source: "World Athletics, 2024-11-03"
+    - title: "Race volunteer costs Ethiopian runner $30,000 at 2024 Hangzhou Marathon"
+      url: "https://runningmagazine.ca/sections/runs-races/race-volunteer-costs-ethiopian-runner-30000-at-2024-hangzhou-marathon/"
+      source: "Canadian Running Magazine, 2024-11-04"
+    - title: "Hangzhou Marathon concludes with new records (Hangzhou Government)"
+      url: "https://www.ehangzhou.gov.cn/2024-11/04/c_291447.htm"
+      source: "Hangzhou Municipal Government, 2024-11-04"
+
+taiyuan-marathon:
+  finishers_total: 40000
+  finishers_total_source: "https://news.cgtn.com/news/2024-09-23/40-000-runners-compete-in-2024-Taiyuan-Marathon-in-N-China-s-Shanxi-1x8dfpu0zD2/index.html (CGTN, 2024-09-23) — 40,000 runners (13k full + 16k half + 5k mini + 6k family) on 22 Sep 2024"
+  highlights:
+    - title: "40,000 runners compete in 2024 Taiyuan Marathon in N China's Shanxi"
+      url: "https://news.cgtn.com/news/2024-09-23/40-000-runners-compete-in-2024-Taiyuan-Marathon-in-N-China-s-Shanxi-1x8dfpu0zD2/index.html"
+      source: "CGTN, 2024-09-23"
+    - title: "2024 Taiyuan Marathon held in Shanxi"
+      url: "http://www.goshanxi.com.cn/taiyuan/2024-09/23/c_1025460.htm"
+      source: "Go Shanxi (Shanxi provincial English portal), 2024-09-23"
+    - title: "Taiyuan Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208721"
+      source: "World Athletics, 2024-09-22"
+    - title: "40,000 runners compete at Taiyuan marathon"
+      url: "http://www.chinasportsbeat.com/2024/09/40000-runners-compete-at-taiyuan.html"
+      source: "China Sports News, 2024-09-23"
+    - title: "Taiyuan International Marathon — Race Results"
+      url: "https://marathonguide.com/races/racedetails.cfm/results/?MIDD=4678241206"
+      source: "Marathon Guide, 2024-09-22"
+
+meishan-renshou-half-marathon:
+  finishers_total: 16000
+  finishers_total_source: "https://www.beokaodm.com/news/beoka-appears-at-the-2024-renshou-half-marathon-with-professional-sports-rehabilitation-equipment-to-assist-athletes-in-their-post-race-recovery/ (Beoka sponsor release, 2024) — 'more than 16,000 runners' at the 25 Feb 2024 edition (National Half Marathon Championships, Stop 1)"
+  highlights:
+    - title: "Matata and Wereta run Chinese all-comers' records in Meishan"
+      url: "https://worldathletics.org/news/report/meishan-renshou-half-marathon-2025-matata-wereta"
+      source: "World Athletics REPORT, 2025-02-23"
+    - title: "Meishan Renshou Half Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7235697"
+      source: "World Athletics, 2025-02-23"
+    - title: "Meishan Renshou Half Marathon — Results by discipline"
+      url: "https://iks.org.ua/competitions2/en/2025.02.23_meishan/results?s=88ABA34D-19A0-49C6-B803-4585A71B6253"
+      source: "IKS official timing, 2025-02-23"
+    - title: "Meishan Renshou Half Marathon — Live Stream / Coverage"
+      url: "https://www.watchathletics.com/schedule/watchlive/9313"
+      source: "Watch Athletics, 2025-02-23"
+    - title: "Meishan Renshou Half Marathon (2025) — Race summary"
+      url: "https://worldsmarathons.com/marathon/meishan-renshou-half-marathon"
+      source: "World's Marathons, 2025-02-23"
+
+istanbul-marathon:
+  finishers_total: 4097
+  finishers_total_source: "https://worldathletics.org/competition/calendar-results/results/7207361 (World Athletics official results, 2024-11-03) — 4,097 marathon finishers (3,263 men); separate 15K and 8K Fun Run categories not included"
+  finishers_men_pct: 80
+  finishers_men_pct_source: "https://worldathletics.org/competition/calendar-results/results/7207361 (World Athletics official results, 2024-11-03) — 3,263 men of 4,097 marathon finishers ≈ 79.6%"
+  finishers_women_pct: 20
+  finishers_women_pct_source: "https://worldathletics.org/competition/calendar-results/results/7207361 (World Athletics official results, 2024-11-03) — 834 women of 4,097 marathon finishers ≈ 20.4%"
+  prize_money_usd: 120000
+  prize_money_usd_source: "https://en.wikipedia.org/wiki/Istanbul_Marathon and Türkiye İş Bankası Istanbul Marathon official prize structure (carried into 2024 edition) — $35,000 / $15,000 / $10,000 top-3 each gender = $60k per gender = $120k headline; full purse extends to top 25 men + top 15 women"
+  highlights:
+    - title: "Ethiopian Debela, Bahraini Jebet reign in 46th Istanbul Marathon"
+      url: "https://www.dailysabah.com/sports/ethiopian-debela-bahraini-jebet-reign-in-46th-istanbul-marathon/news"
+      source: "Daily Sabah, 2024-11-03"
+    - title: "Ruth Jebet Extends Marathon Winning Streak, Dejene Debela Triumphs in Windy Istanbul"
+      url: "https://www.watchathletics.com/article/13188/ruth-jebet-extends-marathon-winning-streak-dejene-debela-triumphs-in-windy-istanbul"
+      source: "Watch Athletics, 2024-11-03"
+    - title: "Debela scores big win, Jebet continues marathon win streak in windy Istanbul"
+      url: "https://www.athletics.africa/news/africa/ethiopia/debela-big-win-jebet-marathon-streak-in-istanbul-18909"
+      source: "Athletics Africa, 2024-11-03"
+    - title: "Jebet wins again, Debela prevails in windy Istanbul"
+      url: "https://athleticsillustrated.com/ruth-jebet-continues-marathon-win-streak-dejene-debela-prevails-in-windy-istanbul/"
+      source: "Athletics Illustrated, 2024-11-03"
+    - title: "Türkiye İş Bankası Istanbul Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207361"
+      source: "World Athletics, 2024-11-03"
+
+jakarta-running-festival-half-marathon:
+  finishers_total: 16000
+  finishers_total_source: "https://www.beritajakarta.id/en/read/56712/16000-runners-enliven-wondr-jakarta-run-festival-2024 (Berita Jakarta — Jakarta city government news portal, Oct 2024) — '16,000 Runners Enliven Wondr Jakarta Run Festival 2024' across all distances at GBK on 12-13 Oct 2024"
+  highlights:
+    - title: "16,000 Runners Enliven Wondr Jakarta Run Festival 2024"
+      url: "https://www.beritajakarta.id/en/read/56712/16000-runners-enliven-wondr-jakarta-run-festival-2024"
+      source: "Berita Jakarta (Jakarta city government), 2024-10-13"
+    - title: "Wondr Jakarta Running Festival 2024 ready to launch — over 16,000 runners"
+      url: "https://gofit.id/wondr-jakarta-running-festival-2024/"
+      source: "GoFit Indonesia, 2024-10"
+    - title: "Jakarta Running Festival — Half Marathon Results"
+      url: "https://www.sportsplits.com/races/jakarta-running-festival-2024/events/7/"
+      source: "SportSplits official timing, 2024-10-13"
+    - title: "Jakarta Running Festival 2024 — Race overview"
+      url: "https://lariku.info/jakarta-running-festival-2024"
+      source: "LariKu (Indonesia run guide), 2024-10"
+    - title: "Jakarta Running Festival - Half Marathon (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7225139"
+      source: "World Athletics, 2024-10-13"
+
+10k-facsa-castell-n:
+  finishers_total: 5000
+  finishers_total_source: "https://worldsmarathons.com/marathon/maraton-castellon (Maratón bp Castellón official, 2024 edition) — 'more than 5,000 runners from around the globe' across the marathon and 10K Facsa held jointly on 25 Feb 2024 (combined headline number; standalone 10K split not separately published)"
+  highlights:
+    - title: "Kiplimo obliterates world half marathon record in Barcelona, Kejelcha and Eisa impress in Castellón"
+      url: "https://worldathletics.org/news/report/jacob-kiplimo-uganda-world-half-marathon-record-barcelona"
+      source: "World Athletics REPORT, 2025-02-16"
+    - title: "10K Facsa Castellón (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220614"
+      source: "World Athletics, 2025-02-16"
+    - title: "Yomif Kejelcha, second-fastest men's 10k time in the world at the 10k FACSA Castelló 2025"
+      url: "https://soymaratonista.com/en/yomif-kejelcha-second-fastest-mens-10k-time-in-the-world-at-the-10k-facsa-castello-2025/"
+      source: "Soy Maratonista, 2025-02-16"
+    - title: "Kejelcha chases world 10km record in Castellón while Kiplimo targets fast half in Barcelona (PREVIEW)"
+      url: "https://worldathletics.org/news/preview/kejelcha-10km-castellon-kiplimo-half-barcelona"
+      source: "World Athletics PREVIEW, 2025-02-13"
+    - title: "10k Facsa Castelló — Race Day Summary"
+      url: "https://mybestruns.com/10kFacsaCastello?b=fw10&details=Y"
+      source: "My Best Runs, 2025-02-16"
+
+durban-international-marathon:
+  finishers_men_pct: 81
+  finishers_men_pct_source: "https://www.marathonview.net/race/140250 (MarathonView, 2025-05-04 edition) — 1,689 men of 2,081 finishers = 81.2% (race-day field of ~7,000 entries; the marathon-distance finishers split this 81/19)"
+  finishers_women_pct: 19
+  finishers_women_pct_source: "https://www.marathonview.net/race/140250 (MarathonView, 2025-05-04 edition) — 392 women of 2,081 marathon finishers = 18.8%"
+
+cape-town-city-marathon:
+  prize_money_usd: 90000
+  prize_money_usd_source: "https://capetownmarathon.com/strongest-elite-field-ever/ (Sanlam Cape Town Marathon press release, 2024) — winners $25,000 each gender + $15,000 course-record bonuses + Wheelchair Invitational $36,000 (open prize purse for the 20 Oct 2024 edition)"
+  highlights:
+    - title: "Glenrose Xaba Shatters South African and Sanlam Cape Town Marathon Records on Debut"
+      url: "https://capetownmarathon.com/glenrose-xaba-shatters-records/"
+      source: "Sanlam Cape Town Marathon press release, 2024-10-20"
+    - title: "Xaba Shatters SA and Cape Town Marathon Records on Debut"
+      url: "https://www.runnersworld.co.za/events/glenrose-xaba-shatters-sa-and-cape-town-marathon-records-on-debut/"
+      source: "Runner's World South Africa, 2024-10-20"
+    - title: "SA's Glenrose Xaba smashes national record at Cape Town Marathon"
+      url: "https://www.news24.com/sport/other-sport/lve-cape-town-marathon-20241020"
+      source: "News24, 2024-10-20"
+    - title: "Glenrose Xaba shatters SA marathon record on debut in Cape Town"
+      url: "https://www.citizen.co.za/sport/glenrose-xaba-sa-marathon-record-cape-town/"
+      source: "The Citizen, 2024-10-20"
+    - title: "2024 Marathon Results | Sanlam Cape Town Marathon"
+      url: "https://capetownmarathon.com/2024-marathon-results/"
+      source: "Sanlam Cape Town Marathon, 2024-10-20"
+
+lanzhou-marathon:
+  finishers_total: 40000
+  finishers_total_source: "http://lanzhou.gogansu.com/2025-05/26/c_1096160.htm (Gansu Daily / Lanzhou municipal news, 2025-05-26) — '40,000 runners compete in Lanzhou Marathon' on 25 May 2025"
+  highlights:
+    - title: "Feature: Marathon boosts tourism in NW China's Gansu"
+      url: "https://english.news.cn/20250525/b25edaec408b4d52a29b8e1d47930f91/c.html"
+      source: "Xinhua, 2025-05-25"
+    - title: "Lanzhou Marathon (Results) — World Athletics Label Road Race"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220846"
+      source: "World Athletics, 2025-05-25"
+    - title: "Lanzhou Marathon — AIMS race information"
+      url: "https://aims-worldrunning.org/races/1157.html"
+      source: "AIMS, 2025"
+
+adidas-stockholm-marathon:
+  finishers_total: 18839
+  finishers_total_source: "https://www.watchathletics.com/page/6683/results-stockholm-marathon-2025 (Watch Athletics, 2025-05-31) — 18,839 marathon finishers"
+  finishers_men_pct: 71
+  finishers_men_pct_source: "https://www.watchathletics.com/page/6683/results-stockholm-marathon-2025 (Watch Athletics, 2025-05-31) — 13,453 men of 18,839 = 71.4%"
+  finishers_women_pct: 29
+  finishers_women_pct_source: "https://www.watchathletics.com/page/6683/results-stockholm-marathon-2025 (Watch Athletics, 2025-05-31) — 5,386 women of 18,839 = 28.6%"
+  highlights:
+    - title: "Stockholm Marathon 2025 Results — Watch Athletics"
+      url: "https://www.watchathletics.com/page/6683/results-stockholm-marathon-2025"
+      source: "Watch Athletics, 2025-05-31"
+    - title: "adidas Stockholm Marathon (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220700"
+      source: "World Athletics, 2025-05-31"
+    - title: "Kenyansk seger i herrklassen - rekordmånga med i Stockholm Marathon"
+      url: "https://www.svt.se/sport/lopning/kenyansk-seger-i-herrklassen-rekordmanga-med-i-stockholm-marathon"
+      source: "SVT Sport (Sweden public broadcaster), 2025-05-31"
+    - title: "ADIDAS Stockholm Marathon — May 31st, 2025 Race Results / Leaderboard"
+      url: "https://mybestruns.com/results/ASICSStockholmMarathon"
+      source: "My Best Runs, 2025-05-31"
+
+access-bank-lagos-city-marathon:
+  finishers_total: 37000
+  finishers_total_source: "https://punchng.com/over-30000-runners-for-10th-access-bank-lagos-city-marathon/ (The Punch, 2025-02-08) — approximately 37,000 runners competed across the 42km and 10km races (out of 60,000+ registered) at the 8 Feb 2025 edition"
+  highlights:
+    - title: "UPDATED: Kenya, Ethiopia athletes win 2025 Lagos city marathon"
+      url: "https://punchng.com/kenyan-athlete-edwin-kibet-wins-2025-lagos-city-marathon/"
+      source: "The Punch, 2025-02-08"
+    - title: "Kenya's Edwin Kibet, Ethiopia's Guta Meseret Hirpa win 2025 Access Bank Lagos City Marathon"
+      url: "https://www.premiumtimesng.com/sports/nigeria-sports-news/774543-kenyas-edwin-kibet-ethiopias-guta-meseret-hirpa-win-2025-access-bank-lagos-city-marathon.html"
+      source: "Premium Times Nigeria, 2025-02-08"
+    - title: "Kenya's Edwin Kibet wins $50,000 prize money at Access Bank Lagos Marathon"
+      url: "https://businessday.ng/sports/article/kenyas-edwin-kibet-wins-50000-prize-money-at-access-bank-lagos-marathon/"
+      source: "BusinessDay Nigeria, 2025-02-08"
+    - title: "Marking Progress at 2025 Access Bank Lagos City Marathon"
+      url: "https://nairametrics.com/2025/03/04/marking-progress-at-2025-access-bank-lagos-city-marathon/"
+      source: "Nairametrics, 2025-03-04"
+    - title: "Over 30,000 runners for 10th Access Bank Lagos City Marathon"
+      url: "https://punchng.com/over-30000-runners-for-10th-access-bank-lagos-city-marathon/"
+      source: "The Punch, 2025-02-08"
+    - title: "Access Bank Lagos City Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7191890?eventId=10229634"
+      source: "World Athletics, 2025-02-08"
+
+10km-port-gentil:
+  finishers_total: 12000
+  finishers_total_source: "https://gabonactu.com/blog/2024/06/24/10-km-de-pog-2024-les-kenyans-raflent-la-mise/ (Gabonactu, 2024-06-24) — 'plus de 12,000 participants' at the 6th edition of the 10km de Port-Gentil; race held over 22-23 June 2024"
+  highlights:
+    - title: "10 km de Port-Gentil : Chemnung Loce tombe le record d'Afrique chez les dames avec 30'40"
+      url: "https://www.gabonreview.com/10-km-de-port-gentil-chemnung-loce-tombe-le-record-dafrique-chez-les-dames-avec-3040/"
+      source: "Gabon Review, 2024-06-23"
+    - title: "10 KM de POG 2024 : les Kenyans raflent la mise"
+      url: "https://gabonactu.com/blog/2024/06/24/10-km-de-pog-2024-les-kenyans-raflent-la-mise/"
+      source: "Gabonactu, 2024-06-24"
+    - title: "AGL, partner of the 10 km of Port-Gentil"
+      url: "https://www.aglgroup.com/en/agl-partner-of-the-10-km-of-port-gentil/"
+      source: "AGL — Africa Global Logistics press release, 2024-06"
+    - title: "Port Gentil 10K Race Results"
+      url: "https://mybestruns.com/PortGentil10K"
+      source: "My Best Runs, 2024-06-22"
+    - title: "10KM Port Gentil (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7191921"
+      source: "World Athletics, 2024-06-22"
+
+mexico-city-marathon-telcel:
+  finishers_total: 30000
+  finishers_total_source: "https://mexiconewsdaily.com/lifestyle/over-30000-41st-mexico-city-marathon/ (Mexico News Daily, 2024-08-26) — 'over 30,000 long-distance runners' competed in the 41st annual Telcel Mexico City Marathon on 25 Aug 2024"
+  prize_money_usd: 32814
+  prize_money_usd_source: "https://mexiconewsdaily.com/lifestyle/over-30000-41st-mexico-city-marathon/ (Mexico News Daily, 2024-08-26) — winners 550,000 pesos (~US$32,814 at Aug 2024 FX) + 245,000 pesos 2nd + 180,000 pesos 3rd; figure shown is top-prize USD equivalent"
+  highlights:
+    - title: "Over 30,000 participate in 41st annual Mexico City marathon"
+      url: "https://mexiconewsdaily.com/lifestyle/over-30000-41st-mexico-city-marathon/"
+      source: "Mexico News Daily, 2024-08-26"
+    - title: "Mexico City Marathon 2024: dominated by Kenya"
+      url: "https://www.theyucatantimes.com/2024/08/mexico-city-marathon-2024-dominated-by-kenya/"
+      source: "The Yucatan Times, 2024-08-26"
+    - title: "Mexico City Marathon Telcel (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208356"
+      source: "World Athletics, 2024-08-25"
+    - title: "Telcel Mexico City Marathon 2024 — Results"
+      url: "https://www.watchathletics.com/page/5891/results-telcel-mexico-city-marathon-2024"
+      source: "Watch Athletics, 2024-08-25"
+    - title: "XLI Marathon of Mexico City Telcel 2024 — Race Roster Results"
+      url: "https://results.raceroster.com/en-US/results/euumftpuznzxz3zr"
+      source: "Race Roster (race operator), 2024-08-25"
+
+aramco-houston-half-marathon:
+  prize_money_usd: 70000
+  prize_money_usd_source: "https://www.chevronhoustonmarathon.com/american-records-targeted-at-2025-houston-marathon-weekend/ (Chevron Houston Marathon press release, Jan 2025) — '$70,000 plus time bonuses' for the Aramco Houston Half Marathon top finishers on 19 Jan 2025"
+
+chevron-houston-marathon:
+  finishers_total: 7917
+  finishers_total_source: "https://www.runningusa.org/industry-news/american-records-fall-at-the-2025-houston-marathon-weekend-of-events/ (Running USA, 2025-01-22) — 7,917 marathon finishers at the 2025 Chevron Houston Marathon on 19 Jan 2025"
+  prize_money_usd: 190000
+  prize_money_usd_source: "https://www.chevronhoustonmarathon.com/american-records-targeted-at-2025-houston-marathon-weekend/ (Chevron Houston Marathon press release, Jan 2025) — 'more than $190,000 in prize money and bonuses' for the marathon"
+
+c-d-xiamen-marathon:
+  finishers_total: 33000
+  finishers_total_source: "https://worldathletics.org/news/preview/kenei-and-zhou-lead-the-fields-in-xiamen-xi (World Athletics preview, Jan 2025) — 33,000 runners from 40+ countries across 5km, 10km, half and full marathon at the 5 Jan 2025 edition"
+  prize_money_usd: 113000
+  prize_money_usd_source: "https://worldathletics.org/news/preview/kenei-and-zhou-lead-the-fields-in-xiamen-xi (World Athletics preview, Jan 2025) — winner $30,000, 2nd $15,000, 3rd $8,000 each gender + $15,000 course-record bonus; top-eight pool ≈$113k per gender"
+  highlights:
+    - title: "Aga and Wolde run course records to win in Xiamen"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/xiamen-marathon-course-records-2025-aga-wolde"
+      source: "World Athletics REPORT, 2025-01-05"
+    - title: "2025 Xiamen Marathon results"
+      url: "https://english.news.cn/20250105/ad96cd9eadde440390f01b06941cb02a/c.html"
+      source: "Xinhua, 2025-01-05"
+    - title: "Ethiopian Runners Dawit Wolde and Ruti Aga Set New Records at 2025 Xiamen Marathon"
+      url: "https://www.watchathletics.com/article/13224/ethiopian-runners-dawit-wolde-and-ruti-aga-set-new-records-at-2025-xiamen-marathon"
+      source: "Watch Athletics, 2025-01-05"
+    - title: "C&D Xiamen Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7219922"
+      source: "World Athletics, 2025-01-05"
+
+chang-an-automobile-chongqing-marathon:
+  finishers_total: 35000
+  finishers_total_source: "https://www.ichongqing.info/2025/03/03/chongqing-marathon-2025-a-record-breaking-spectacle/ (iChongqing — Chongqing International Communication Center, 2025-03-03) — 25,000 marathon + 10,000 mini-run = 35,000 participants on 2 Mar 2025"
+
+guangzhou-marathon:
+  finishers_total: 30000
+  finishers_total_source: "https://www.newsgd.com/node_e9dced8600/a498121a82.shtml (GDToday — Guangdong Provincial press portal, 2024-12-08) — 30,000 starters at the 8 Dec 2024 edition (half marathon category cancelled; full + 10km categories ran). 112,987 was registrations, not race-day field"
+  highlights:
+    - title: "Ethiopian wins Guangzhou Marathon 2024, breaking event record"
+      url: "https://www.newsgd.com/node_99363c4f3b/5cac19e230.shtml"
+      source: "GDToday (Guangdong provincial press), 2024-12-08"
+    - title: "2024 Guangzhou Marathon concludes with records shattered and joyful scenes along iconic city landmarks"
+      url: "https://www.newsgd.com/node_e9dced8600/a498121a82.shtml"
+      source: "GDToday (Guangdong provincial press), 2024-12-08"
+    - title: "Record-breaking triumph seen at Guangzhou Marathon"
+      url: "http://en.thnet.gov.cn/2024-12/10/c_1051874.htm"
+      source: "Tianhe District government (Guangzhou), 2024-12-10"
+    - title: "Guangzhou Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208924"
+      source: "World Athletics, 2024-12-08"
+
+shenzhen-marathon:
+  finishers_total: 20000
+  finishers_total_source: "https://www.eyeshenzhen.com/content/2024-09/04/content_31191081.htm (Shenzhen Government Online — EyeShenzhen, 2024-09-04) — 20,000 runners from 30+ countries for the 1 Dec 2024 edition (10th anniversary)"
+  prize_money_usd: 54000
+  prize_money_usd_source: "https://www.eyeshenzhen.com/content/2024-09/04/content_31191081.htm (Shenzhen Government Online — EyeShenzhen, 2024-09-04) — 'top finishers receive US$54,000 each' + $20,000 course-record bonus + 100,000-yuan Chinese-record bonus"
+  highlights:
+    - title: "Sign up now for marathon — 2024 Shenzhen Marathon (10th edition)"
+      url: "https://www.eyeshenzhen.com/content/2024-09/04/content_31191081.htm"
+      source: "EyeShenzhen (Shenzhen Government Online), 2024-09-04"
+    - title: "Registration starts! 2024 Shenzhen Marathon to kick off on December 1st"
+      url: "https://www.newsgd.com/node_99363c4f3b/421ee6eac9.shtml"
+      source: "GDToday (Guangdong provincial press), 2024-09"
+    - title: "Shenzhen Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207770"
+      source: "World Athletics, 2024-12-01"
+
+byd-singapore-international-marathon-presented-by-adidas:
+  finishers_total: 55000
+  finishers_total_source: "https://www.endurancesportswire.com/standard-chartered-singapore-marathon-2024-draws-over-55000-participants-from-around-the-world-for-marquee-race-weekend/ (Endurance Sportswire press release, Dec 2024) — 'over 55,000 participants' across full marathon, half, 10K, 5K and Ekiden relay; 13,000 international from 84 countries"
+
+# --- Asian + Middle East flagship races (2024-2025 editions) ---
+
+dubai-marathon:
+  prize_money_usd: 316000
+  prize_money_usd_source: "https://www.dubaimarathon.org/news-media/prize-money/ (Dubai Marathon official site, 2025 edition) — total marathon open prize purse $316,000 across men and women top-10; winners $80,000 each. Same purse structure used 12 Jan 2025 edition"
+
+burj2burj-half-marathon:
+  finishers_total: 6500
+  finishers_total_source: "https://www.burj2burj.com/ (Burj2Burj official, 9 Feb 2025 edition) — sold-out race with ~6,500 starters between Burj Khalifa and Burj Al Arab; figure aligns with route capacity per organiser communications"
+  highlights:
+    - title: "Yalemzerf Yehualaw and Bernard Kiprop Koech win the 2025 Burj2Burj Half Marathon in Dubai"
+      url: "https://athleticsillustrated.com/yalemzerf-yehualaw-and-bernard-kiprop-keoch-win-the-2025-burj2burj-half-marathon-in-dubai-on-sunday/"
+      source: "Athletics Illustrated, 2025-02-09"
+    - title: "Burj2Burj Half Marathon (Results) — World Athletics Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220690"
+      source: "World Athletics, 2025-02-09"
+    - title: "Burj2Burj Half Marathon 2025 — Results"
+      url: "https://www.watchathletics.com/page/6322/results-burj2burj-half-marathon-2025"
+      source: "Watch Athletics, 2025-02-09"
+    - title: "Burj2Burj 2025 — Official MYLAPS Sporthive Results"
+      url: "https://results.sporthive.com/events/7290071308327531776"
+      source: "Sporthive (official timing), 2025-02-09"
+
+ras-al-khaimah-half-marathon:
+  prize_money_usd: 325350
+  prize_money_usd_source: "https://mybestruns.com/RakHalfMarathon?details=Y (My Best Runs, 1 Feb 2025 edition) — $325,350 total prize purse for the 18th RAK Half Marathon"
+
+doha-marathon-by-ooredoo:
+  finishers_total: 15000
+  finishers_total_source: "https://www.gco.gov.qa/en/media-centre/top-news/doha-marathon-draws-record-runners-from-140-countries/ (Qatar Government Communications Office, Jan 2025) — 'record 15,000 runners from 140 countries' at the 13th Doha Marathon by Ooredoo on 17 Jan 2025"
+  prize_money_usd: 274500
+  prize_money_usd_source: "https://www.ooredoo.qa/web/en/press-release/the-doha-marathon-by-ooredoo-will-be-held-on-january-17-at-the-iconic-doha-corniche-offering-prizes-worth-over-qr-1-million/ (Ooredoo Qatar press release, 2024-10-09) — 'prizes worth over QR 1 million' (≈US$274,500 at QAR 3.64/USD peg) plus two Toyota vehicles raffled among finishers"
+  highlights:
+    - title: "Ethlemahu Sintayehu stars at 2025 Doha Marathon by Ooredoo"
+      url: "https://athleticsweekly.com/news/ethlemahu-sintayehu-stars-at-2025-doha-marathon-by-ooredoo-1039998378/"
+      source: "Athletics Weekly, 2025-01-17"
+    - title: "Doha Marathon by Ooredoo breaks records, celebrates community spirit"
+      url: "https://www.qatar-tribune.com/article/159764/nation/doha-marathon-by-ooredoo-breaks-records-celebrates-community-spirit"
+      source: "Qatar Tribune, 2025-01-23"
+    - title: "Doha Marathon by Ooredoo draws record 15,000 runners from 140 countries"
+      url: "https://www.gco.gov.qa/en/media-centre/top-news/doha-marathon-draws-record-runners-from-140-countries/"
+      source: "Qatar Government Communications Office, Jan 2025"
+    - title: "Doha Marathon 2025: Tanui and Sintayehu Steal the Show"
+      url: "https://www.qatarmoments.com/doha-marathon-2025-tanui-and-sintayehu-steal-the-show-710838.html"
+      source: "Qatar Moments, 2025-01-18"
+
+nagoya-women-s-marathon:
+  finishers_total: 20000
+  finishers_total_source: "https://aims-worldrunning.org/articles/2516-international-entry-opens-for-nagoya.html (AIMS, 2024-08-27) — 20,000 women planned including 3,500 overseas + 500 virtual entrants for the 9 Mar 2025 edition (Guinness-certified largest women's running race)"
+  highlights:
+    - title: "Nagoya Women's Marathon 2025 Results — Sheila Chepkirui wins in 2:20:40"
+      url: "https://www.watchathletics.com/page/6435/results-nagoya-women-s-marathon-2025"
+      source: "Watch Athletics, 2025-03-09"
+    - title: "Nagoya Women's Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7219926"
+      source: "World Athletics, 2025-03-09"
+    - title: "Nagoya Women's Marathon — AIMS race information"
+      url: "https://aims-worldrunning.org/races/672.html"
+      source: "AIMS, 2025"
+    - title: "Nagoya Women's Marathon Race Results - Nagoya, Japan - 3/9/2025"
+      url: "https://mybestruns.com/NagoyaWomensMarathon?b=bux&details=Y"
+      source: "My Best Runs, 2025-03-09"
+
+osaka-women-s-marathon:
+  highlights:
+    - title: "Edesa retains marathon title in Osaka"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/osaka-marathon-2025-edesa-kobayashi-suzuki"
+      source: "World Athletics REPORT, 2025-01-26"
+    - title: "A Historic Triumph for Edesa and Maeda at the Osaka International Women's Marathon"
+      url: "https://www.watchathletics.com/article/12842/a-historic-triumph-at-the-osaka-international-women-s-marathon"
+      source: "Watch Athletics, 2025-01-26"
+    - title: "Course record-holder Edesa faces Salpeter and Matsuda in Osaka"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/osaka-marathon-edesa-salpeter-matsuda"
+      source: "World Athletics PREVIEW, 2025-01"
+    - title: "Osaka Women's Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7220363"
+      source: "World Athletics, 2025-01-26"
+
+xl-medio-marat-n-internacional-guadalajara-electrolit:
+  finishers_total: 21000
+  finishers_total_source: "https://viewsmedia.mx/historico-21k-guadalajara-2025-record-nacional-y-gran-participacion/ and https://www.informador.mx/deportes/21K-GDL-Electrolit-Fiesta-atletica-en-Guadalajara-gran-ambiente-y-records-20250223-0045.html — 'aproximadamente 21,000 corredores' / '21,000 atletas' at the 23 Feb 2025 edition (XL/40th); first Mexican half-marathon to earn World Athletics Platinum Label"
+  prize_money_usd: 5700
+  prize_money_usd_source: "https://playersoflife.com/guadalajara/medio-maraton-guadalajara-2025-fecha-costos-y-premios/ (Players of Life, Feb 2025) — 13,000 / 7,000 / 6,000 pesos top-3 + scaled top-8 = ~58,000 MXN per gender = ~116,000 MXN total ≈ US$5,700 at Feb 2025 FX (MXN 20.4/USD)"
+  volunteers: 3200
+  volunteers_source: "https://viewsmedia.mx/historico-21k-guadalajara-2025-record-nacional-y-gran-participacion/ (Views Media, 2025-02-23) — 3,200 volunteers deployed across 74 government departments and organisations supporting the 23 Feb 2025 XL edition"
+  highlights:
+    - title: "En su cumpleaños 483, el Medio Maratón Electrolit 2025 hace vibrar a Guadalajara"
+      url: "https://www.informador.mx/deportes/En-su-cumpleanos-483-el-Medio-Maraton-Electrolit-2025-hace-vibrar-a-Guadalajara-20250223-0050.html"
+      source: "El Informador, 2025-02-23"
+    - title: "Tadu Abate Deme de Etiopía se corona en el Medio Maratón de Guadalajara"
+      url: "https://www.eluniversal.com.mx/deportes/tadu-abate-deme-de-etiopia-se-corona-en-el-medio-maraton-de-guadalajara-representantes-mexicanos-quedaron-entre-los-diez-mejores/"
+      source: "El Universal, 2025-02-23"
+    - title: "XL Medio Maratón Internacional Guadalajara Electrolit (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7237360"
+      source: "World Athletics, 2025-02-23"
+    - title: "XXXIX Medio Maratón Internacional Guadalajara Electrolit 2025 — Elite & Classified Results"
+      url: "https://resultados.marcate.events/resultado/SPTMCAR1728421135"
+      source: "Marcate Events (official timing), 2025-02-23"
+    - title: "21K GDL Electrolit — Race Results"
+      url: "https://mybestruns.com/21kGDLElectrolit?b=prz"
+      source: "My Best Runs, 2025-02-23"
+
+osaka-marathon:
+  finishers_total: 32000
+  finishers_total_source: "https://www.osaka-marathon.com/2025/en/info/gist/ (Osaka Marathon 2025 official outline) — 31,970 marathon participants + 2,000 720<Naniwa> Marathon + 30 wheelchair = ~34,000 cap; ~32,000 marathon finishers across the 24 Feb 2025 edition (full-marathon component)"
+
+seoul-marathon:
+  finishers_total: 35000
+  finishers_total_source: "https://en.seoul-marathon.com/ (Seoul Marathon official, 2025 edition) — annual Seoul International Marathon attracts ~35,000 participants across full and 10K races; Dong-A Ilbo Seoul Marathon held 16 Mar 2025"
+  highlights:
+    - title: "Ketema and Chelimo break Barcelona course records, Gressier smashes European 5km record (incl. Seoul Marathon report)"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/2025-barcelona-seoul-marathon"
+      source: "World Athletics REPORT, 2025-03-16"
+    - title: "2025 Seoul Marathon Successfully Completed"
+      url: "http://en.seoul-marathon.com/60/?bmode=view&idx=158727027"
+      source: "Seoul Marathon official (Dong-A Ilbo), 2025-03-16"
+    - title: "2025 Seoul Marathon Race Results"
+      url: "http://en.seoul-marathon.com/60/?idx=158348003&bmode=view"
+      source: "Seoul Marathon official (Dong-A Ilbo), 2025-03-16"
+    - title: "Seoul Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7219904"
+      source: "World Athletics, 2025-03-16"
+
+shanghai-marathon:
+  finishers_total: 38000
+  finishers_total_source: "https://en.shio.gov.cn/TrueCMS/shxwbgs/voices/content/20241201225756201.htm (Shanghai Information Office, 2024-12-01) — 38,000 runners across 42km full marathon + fitness-run + first wheelchair division; >98% completion rate. Race held 1 Dec 2024"
+  highlights:
+    - title: "2024 Shanghai Marathon concludes with outstanding performances"
+      url: "https://english.shanghai.gov.cn/en-Events/20241201/7c8c8744383446bd9cdee3076f8d4bb1.html"
+      source: "Shanghai Municipal Government, 2024-12-01"
+    - title: "2024 Shanghai Marathon concludes with outstanding performances, future plans"
+      url: "https://www.chinadaily.com.cn/a/202412/01/WS674c115ca310f1265a1d06c5.html"
+      source: "China Daily, 2024-12-01"
+    - title: "New discipline and new technology feature in 2024 Marathon"
+      url: "https://en.shio.gov.cn/TrueCMS/shxwbgs/voices/content/20241201225756201.htm"
+      source: "Shanghai Information Office, 2024-12-01"
+    - title: "Shanghai Marathon becomes Abbott World Marathon Majors candidate race"
+      url: "https://www.worldmarathonmajors.com/content-hub/shanghai-marathon-becomes-abbott-world-marathon-majors-candidate-race"
+      source: "Abbott World Marathon Majors, 2024"
+    - title: "Shanghai Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207769"
+      source: "World Athletics, 2024-12-01"
+
+bank-of-china-beijing-marathon:
+  finishers_total: 30000
+  finishers_total_source: "https://www.globaltimes.cn/page/202411/1322343.shtml (Global Times, 2024-11-03) — 30,000 runners from 43 countries at the 2024 Beijing Marathon (BOC-sponsored) on 3 Nov 2024; 180,000 applicants registered"
+  highlights:
+    - title: "Ethiopian and Kenyan runners win titles at 2024 Beijing Marathon"
+      url: "https://www.chinadaily.com.cn/a/202411/03/WS67274de8a310f1265a1cb158.html"
+      source: "China Daily, 2024-11-03"
+    - title: "Athletes run toward best times in Beijing marathon"
+      url: "https://www.chinadaily.com.cn/a/202411/04/WS67287bf7a310f1265a1cb51f.html"
+      source: "China Daily, 2024-11-04"
+    - title: "Runners Attend Beijing Marathon 2024"
+      url: "https://english.beijing.gov.cn/latest/news/202411/t20241104_3933342.html"
+      source: "Beijing Municipal Government, 2024-11-04"
+    - title: "Marathon boom sweeps China as thousands hit the streets on 'Super Marathon Weekend'"
+      url: "http://en.people.cn/n3/2024/1104/c90000-20236908.html"
+      source: "People's Daily Online, 2024-11-04"
+    - title: "BEIKE Beijing Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207358"
+      source: "World Athletics, 2024-11-03"
+
+adnoc-abu-dhabi-marathon:
+  finishers_total: 33000
+  finishers_total_source: "https://adsc.gov.ae/media-center/press-releases/the-sixth-edition-of-the-adnoc-abu-dhabi-marathon-2024-kicks-off-tomorrow-with-more-than-33-000-male-and-female-runners-set-to-participate/ (Abu Dhabi Sports Council press release, Dec 2024) — 'more than 33,000 male and female runners' across full marathon, relay, 10km, 5km, 2.5km on 14 Dec 2024"
+  prize_money_usd: 300000
+  prize_money_usd_source: "https://adsc.gov.ae/media-center/press-releases/the-sixth-edition-of-the-adnoc-abu-dhabi-marathon-2024-kicks-off-tomorrow-with-more-than-33-000-male-and-female-runners-set-to-participate/ (Abu Dhabi Sports Council press release, Dec 2024) — total prize money exceeds $300,000; marathon elite winners $50,000 each"
+  highlights:
+    - title: "Ethiopian Regasa and Kenyan Amanang'ole Crowned Champions as ADNOC Abu Dhabi Marathon Marks Sixth Successful Edition"
+      url: "https://adsc.gov.ae/media-center/press-releases/ethiopian-regasa-and-kenyan-amanang-ole-crowned-champions-as-adnoc-abu-dhabi-marathon-marks-sixth-successful-edition/"
+      source: "Abu Dhabi Sports Council press release, 2024-12-14"
+    - title: "Abu Dhabi Marathon 2024: All top results and times - full list"
+      url: "https://www.olympics.com/en/news/abu-dhabi-marathon-2024-regasa-amanangole-top-results-times"
+      source: "Olympics.com, 2024-12-14"
+    - title: "Ethiopian Regasa and Kenyan Amanang'ole triumph at ADNOC Abu Dhabi Marathon 2024"
+      url: "https://www.athletics.africa/news/africa/kenya/ethiopian-regasa-and-kenyan-amanangole-triumph-at-adnoc-abu-dhabi-marathon-2024-19419"
+      source: "Athletics Africa, 2024-12-14"
+    - title: "The sixth edition of the ADNOC Abu Dhabi Marathon 2024 kicks off tomorrow with more than 33,000 male and female runners"
+      url: "https://adsc.gov.ae/media-center/press-releases/the-sixth-edition-of-the-adnoc-abu-dhabi-marathon-2024-kicks-off-tomorrow-with-more-than-33-000-male-and-female-runners-set-to-participate/"
+      source: "Abu Dhabi Sports Council press release, 2024-12-13"
+    - title: "ADNOC Abu Dhabi Marathon (Results) — World Athletics Label Road Race"
+      url: "https://worldathletics.org/competition/calendar-results/results/7217682"
+      source: "World Athletics, 2024-12-14"
+    - title: "ADNOC Abu Dhabi Marathon 2024 — Results"
+      url: "https://www.watchathletics.com/page/6182/results-adnoc-abu-dhabi-marathon-2024"
+      source: "Watch Athletics, 2024-12-14"
+
+# --- European + remaining flagship races (2024-2025 editions) ---
+
+nn-marathon-rotterdam:
+  finishers_men_pct: 75
+  finishers_men_pct_source: "https://www.runners.quest/rotterdam-marathon/ (Runners Quest summary citing race statistics, 2025-04-13 edition) — 14,019 male / 18,745 total finishers ≈ 74.8%"
+  finishers_women_pct: 25
+  finishers_women_pct_source: "https://www.runners.quest/rotterdam-marathon/ (Runners Quest summary, 2025-04-13 edition) — 4,726 female / 18,745 total finishers ≈ 25.2%"
+  spectators: 925000
+  spectators_source: "https://mybestruns.com/RotterdamMarathon (My Best Runs, 2025 edition) — '925,000 spectators line the course'; figure also widely cited in race coverage"
+
+schneider-electric-marathon-de-paris:
+  volunteers: 3500
+  volunteers_source: "https://www.marathons.com/en/save-the-date/paris-marathon-2025-key-figures-of-a-record-breaking-edition-marathon/ (Marathons.com — ASO/L'Équipe-affiliated, Apr 2025) — 3,500 volunteers deployed for the record 13 Apr 2025 edition; 6,000 charity runners raised ~€5M for 300+ charities"
+  prize_money_usd: 165000
+  prize_money_usd_source: "https://mybestruns.com/MarathondeParis?b=prz (My Best Runs, 2025 edition prize structure) — €50,000 + €30,000 + €20,000 = €100,000 per gender (top-3 only, headline tier); ~€150,000 / ~US$165,000 across both elite fields per ASO published scale (top-10 if time bonuses met)"
+
+istanbul-half-marathon:
+  finishers_total: 14000
+  finishers_total_source: "https://www.ahotu.com/event/turkiye-is-bankasi-20th-istanbul-half-marathon (Ahotu / Türkiye İş Bankası 20th edition press, 2024) and Istanbul Half Marathon 2025 organiser communications — 'over 14,000 athletes on the starting line' for the 21st edition on 27 Apr 2025; record participation"
+
+hoka-semi-de-paris:
+  finishers_total: 47532
+  finishers_total_source: "https://running-attitude.com/resultats-du-semi-marathon-de-paris-2025-47-532-finishers/ (Running Attitude, 2025-03-10) — 47,532 finishers; >48,000 starters at the 9 Mar 2025 edition (largest half-marathon in the world)"
+  finishers_men_pct: 56
+  finishers_men_pct_source: "https://running-attitude.com/resultats-du-semi-marathon-de-paris-2025-47-532-finishers/ (Running Attitude, 2025-03-10) — 44% women per ASO, so 56% men at the 9 Mar 2025 edition"
+  finishers_women_pct: 44
+  finishers_women_pct_source: "https://running-attitude.com/resultats-du-semi-marathon-de-paris-2025-47-532-finishers/ (Running Attitude, 2025-03-10) — 'Women represented: 44% of participants' (up from 35% in 2022) at the 9 Mar 2025 edition"
+
+hyundai-mitja-marat-de-barcelona-by-brooks:
+  volunteers: 650
+  volunteers_source: "https://ajuntament.barcelona.cat/esports/en/news/the-edreams-mitja-marato-barcelona-by-brooks-2025-breaks-records-with-30000-participants-1482764 (Barcelona City Council Sports, Feb 2025) — '650 volunteers' from 13 associations on the course at the 16 Feb 2025 edition; 30,000 participants, 12,000 women (40%)"
+
+zurich-marat-de-barcelona:
+  spectators: 200000
+  spectators_source: "https://www.zurichmaratobarcelona.es/en/the-zurich-marato-barcelona-2025-optimises-its-route-to-improve-the-runners-and-spectators-experience-for-runners-and-spectators/ (Zurich Marató Barcelona organiser, Feb 2025) — 'over 200,000 spectators' along the route for the record 16 Mar 2025 edition (27,000 registered)"
+  volunteers: 1300
+  volunteers_source: "https://www.zurichmaratobarcelona.es/en/the-zurich-marato-barcelona-2025-optimises-its-route-to-improve-the-runners-and-spectators-experience-for-runners-and-spectators/ (Zurich Marató Barcelona organiser, Feb 2025) — '1,300+ volunteers from 22 local entities' supported the event"
+
+generali-prague-half-marathon:
+  finishers_total: 14171
+  finishers_total_source: "https://www.runczech.com/en/results/generali-1-2maraton-praha-2025 (RunCzech official results, 2025-04-05) — 14,171 finishers at the Generali Prague Half Marathon 2025"
+
+prague-marathon:
+  # finishers_total now sourced live from the RunCzech results widget for
+  # the 31st Vodafone Prague Marathon (2026-05-03) — 9,055 marathon finishers
+  # https://www.runczech.com/en/results/vodafone-prague-marathon-2026
+  finishers_men_pct: 74.6
+  finishers_men_pct_source: "https://www.runczech.com/en/results/vodafone-prague-marathon-2026?sex=0&filter_sex=0 (RunCzech official results, gender-filtered, 2026-05-03) — 6,758 men of 9,055 marathon finishers = 74.6%"
+  finishers_women_pct: 25.4
+  finishers_women_pct_source: "https://www.runczech.com/en/results/vodafone-prague-marathon-2026?sex=1&filter_sex=1 (RunCzech official results, gender-filtered, 2026-05-03) — 2,297 women of 9,055 marathon finishers = 25.4%"
+  volunteers: 1500
+  volunteers_source: "https://www.runczech.com/en/events/vodafone-prague-marathon-2026/news-from-the-race (RunCzech race-day news feed, 2026-05-03 16:00) — 'Thank you to the runners, fans, and 1,500 volunteers for creating an amazing atmosphere.'"
+  prize_money_usd: 343000
+  prize_money_usd_source: "https://mybestruns.com/PragueMarathon?b=prz&details=Y (My Best Runs, May 2025 prize summary) — total marathon prize money $343,000; long-standing RunCzech purse structure unchanged for the 3 May 2026 edition"
+
+generali-berliner-halbmarathon:
+  finishers_total: 40721
+  finishers_total_source: "https://www.generali-berliner-halbmarathon.de/en/news-media/news/detail/new-records-at-the-generali-berlin-half-marathon (SCC Events / Generali Berlin Half organiser, 2025-04-06) — 40,721 finishers in the half-marathon proper; ~42,000 athletes total including supporting events. Race date: Sunday 6 Apr 2025 (April, not March)"
+  finishers_men_pct: 57
+  finishers_men_pct_source: "https://rrm.com/2026/news/sccevents-45th-anniversary-of-the-generali-berlin-half-marathon-with-record-numbers-and-a-premiere/ (Road Race Management citing SCC Events, 2026 edition) — '2025: 43% women' implies 57% men at the 6 Apr 2025 edition"
+  finishers_women_pct: 43
+  finishers_women_pct_source: "https://rrm.com/2026/news/sccevents-45th-anniversary-of-the-generali-berlin-half-marathon-with-record-numbers-and-a-premiere/ (Road Race Management citing SCC Events, 2026 edition) — '2025: 43% women' (rising from 41% in 2024 and 39% in 2019)"
+
+nlb-ljubljana-marathon:
+  finishers_total: 21242
+  finishers_total_source: "https://ljubljanskimaraton.si/en/history/participation (Ljubljanski Marathon official participation history) — 21,242 total participants across all distances at the 28th edition on 20 Oct 2024; 24,675 weekend registrations across all events; 5,092 foreign runners from a record 86 countries"
+  highlights:
+    - title: "Highlights of 28th Ljubljana Marathon"
+      url: "https://english.news.cn/20241021/344e3081265a46a9af3e58abd4228903/c.html"
+      source: "Xinhua, 2024-10-21"
+    - title: "NLB Ljubljana Marathon 2024 Results"
+      url: "https://www.watchathletics.com/page/6055/results-nlb-ljubljana-marathon-2024"
+      source: "Watch Athletics, 2024-10-20"
+    - title: "NLB Ljubljana Marathon (Results) — World Athletics Gold Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7208780"
+      source: "World Athletics, 2024-10-20"
+    - title: "NLB Ljubljana Marathon — Official Results"
+      url: "https://ljubljanskimaraton.si/en/results"
+      source: "Ljubljanski Marathon official, 2024-10-20"
+
+tcs-amsterdam-marathon:
+  finishers_total: 48000
+  finishers_total_source: "https://www.tcs.com/who-we-are/sports-sponsorships/amsterdam-marathon (TCS sports sponsorship page, citing 2024 TCS Amsterdam Marathon recap) — 'more than 48,000 runners' across full marathon, half-marathon and 8K at the 20 Oct 2024 edition (49th edition); €1,305,929 raised for KWF and Cancer Centre Amsterdam"
+  spectators: 500000
+  spectators_source: "https://www.tcs.com/who-we-are/sports-sponsorships/amsterdam-marathon (TCS sports sponsorship page, 2024 TCS Amsterdam Marathon recap) — 'over 500,000 spectators cheered them on'"
+  volunteers: 1600
+  volunteers_source: "https://www.tcsamsterdammarathon.eu/volunteers (TCS Amsterdam Marathon official volunteers page) — 'about 1,600 volunteers work hard every year to make the TCS Amsterdam Marathon a success'"
+  highlights:
+    - title: "Yehualaw breaks Amsterdam course record, Getachew regains title"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/amsterdam-marathon-yehualaw-getachew-2024"
+      source: "World Athletics REPORT, 2024-10-20"
+    - title: "Yalemzerf Yehualaw sets course record at TCS Amsterdam Marathon"
+      url: "https://athleticsweekly.com/event-reports/yalemzerf-yehualaw-sets-course-record-at-tcs-amsterdam-marathon-1039993797/"
+      source: "Athletics Weekly, 2024-10-20"
+    - title: "Ethiopian runners Getachew and Yehualaw win Amsterdam marathon"
+      url: "https://nltimes.nl/2024/10/20/ethiopian-runners-getachew-yehualaw-win-amsterdam-marathon"
+      source: "NL Times, 2024-10-20"
+    - title: "Yalemzerf Yehualaw Smashes Course Record at TCS Amsterdam Marathon"
+      url: "https://www.tcsamsterdammarathon.eu/yalemzerf-yehualaw-smashes-course-record-at-tcs-amsterdam-marathon"
+      source: "TCS Amsterdam Marathon official, 2024-10-20"
+    - title: "TCS Amsterdam Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7213024"
+      source: "World Athletics, 2024-10-20"
+
+tcs-toronto-waterfront-marathon:
+  finishers_total: 6268
+  finishers_total_source: "https://runningmagazine.ca/sections/runs-races/top-age-group-finishers-at-2024-tcs-toronto-waterfront-marathon/ (Canadian Running Magazine, Oct 2024) — 6,268 finishers in the 42.2km event at the 20 Oct 2024 edition — most ever for a Canadian marathon; full weekend ~30,000 participants"
+  spectators: 100000
+  spectators_source: "https://www.tcs.com/who-we-are/worldwide/tcs-na/article/toronto-waterfront-marathon (TCS — title sponsor, 2024 edition recap) — 'as many as 100,000 friends, family members, and running enthusiasts' across 28 official cheer sites and the start/finish lines"
+  volunteers: 3000
+  volunteers_source: "https://www.tcs.com/who-we-are/worldwide/tcs-na/article/toronto-waterfront-marathon (TCS — title sponsor, 2024 edition recap) — '3,000 volunteers gave their time over the weekend' at the Race Expo and on race day"
+  prize_money_usd: 92000
+  prize_money_usd_source: "https://canadarunningseries.com/about/elites-prizing/ (Canada Running Series — race operator) — total CA$127,000 marathon prize purse (CA$97,000 open + CA$30,000 Canadian championships) ≈ US$92,000 at Oct 2024 FX (1 CAD ≈ 0.725 USD) for the 20 Oct 2024 edition"
+  highlights:
+    - title: "Ethiopia's Waganesh Mekasha sets Canadian soil record at TCS Toronto Waterfront Marathon"
+      url: "https://runningmagazine.ca/sections/runs-races/ethiopias-waganesh-mekasha-sets-canadian-soil-record-at-tcs-toronto-waterfront-marathon/"
+      source: "Canadian Running Magazine, 2024-10-20"
+    - title: "Justin Kent, Natasha Wodak top Canadians at TCS Toronto Waterfront Marathon"
+      url: "https://www.cbc.ca/sports/olympics/summer/athletics/toronto-waterfront-marathon-2024-october-20-1.7357266"
+      source: "CBC Sports, 2024-10-20"
+    - title: "Top age-group finishers at 2024 TCS Toronto Waterfront Marathon"
+      url: "https://runningmagazine.ca/sections/runs-races/top-age-group-finishers-at-2024-tcs-toronto-waterfront-marathon/"
+      source: "Canadian Running Magazine, 2024-10"
+    - title: "Wodak, Kent crowned Canadian champions, Ethiopians make impact at TCS Toronto Waterfront Marathon"
+      url: "https://athleticsillustrated.com/ethiopians-make-impact-at-tcs-toronto-waterfront-marathon/"
+      source: "Athletics Illustrated, 2024-10-20"
+    - title: "TCS Toronto Waterfront Marathon (Results) — World Athletics Elite Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207388"
+      source: "World Athletics, 2024-10-20"
+
+cardiff-half-marathon:
+  finishers_total: 27500
+  finishers_total_source: "https://www.run4wales.org/thousands-take-to-the-welsh-capital-for-the-2024-principality-cardiff-half-marathon/ (Run 4 Wales — race operator, Oct 2024) — 27,500 sign-ups for Sunday's main half-marathon at the 21st edition (6 Oct 2024); 1,500 in junior races; record overall"
+  highlights:
+    - title: "2024 Elite Report — Cardiff Half Marathon"
+      url: "https://www.cardiffhalfmarathon.co.uk/2024-elite-report/"
+      source: "Cardiff Half Marathon official, 2024-10-06"
+    - title: "Thousands take to the Welsh capital for the 2024 Principality Cardiff Half Marathon"
+      url: "https://www.run4wales.org/thousands-take-to-the-welsh-capital-for-the-2024-principality-cardiff-half-marathon/"
+      source: "Run 4 Wales (race operator), 2024-10-06"
+    - title: "Weekend Round-Up (5-6 October 2024) — Welsh Athletics"
+      url: "https://www.welshathletics.org/en/blog/post/weekend-round-up-5-6-october-2024"
+      source: "Welsh Athletics, 2024-10-07"
+    - title: "Principality Cardiff Half Marathon (Results) — World Athletics"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207969"
+      source: "World Athletics, 2024-10-06"
+
+medio-marathon-valencia-trinidad-alfonso-zurich:
+  finishers_total: 24137
+  finishers_total_source: "https://valencianews.es/deportes/las-cifras-del-medio-maraton-valencia-trinidad-alfonso-zurich-2024/ (Valencia News, Oct 2024) — 24,137 participants in the 33rd edition on 27 Oct 2024 (25,000 registered); 18% half-marathon debutantes; 47% running Valencia for the first time"
+  volunteers: 1500
+  volunteers_source: "https://valencianews.es/deportes/las-cifras-del-medio-maraton-valencia-trinidad-alfonso-zurich-2024/ (Valencia News, Oct 2024) — '1,500 voluntarios' supported the 27 Oct 2024 edition"
+  highlights:
+    - title: "New Men's World Record at the 2024 Valencia Half Marathon"
+      url: "https://soymaratonista.com/en/new-mens-world-record-at-the-2024-valencia-half-marathon/"
+      source: "Soy Maratonista, 2024-10-27"
+    - title: "Valencia Half Marathon 2024 Results — Watch Athletics"
+      url: "https://www.watchathletics.com/page/6057/results-valencia-half-marathon-2024"
+      source: "Watch Athletics, 2024-10-27"
+    - title: "Medio Maratón Valencia Trinidad Alfonso Zurich (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7207333"
+      source: "World Athletics, 2024-10-27"
+    - title: "Las cifras del Medio Maratón Valencia Trinidad Alfonso Zurich 2024"
+      url: "https://valencianews.es/deportes/las-cifras-del-medio-maraton-valencia-trinidad-alfonso-zurich-2024/"
+      source: "Valencia News, 2024-10-27"
+
+marat-n-valencia-trinidad-alfonso-zurich:
+  finishers_total: 28590
+  finishers_total_source: "https://www.correcaminos.org/maraton-valencia-agota-los-35-000-dorsales-para-la-edicion-de-2024/ (SD Correcaminos — race operator) and Valencia Marathon 2024 reporting — 28,590 finishers crossed the City of Arts and Sciences finish line at the 44th edition on 1 Dec 2024 (35,000 dorsals sold; Spain's largest marathon)"
+  finishers_men_pct: 79
+  finishers_men_pct_source: "https://marathonhandbook.com/valencia-marathon-sub-3-hour-finishers/ (Marathon Handbook citing official statistics, Dec 2024) — women 21% of the field, so men ≈79% at the 1 Dec 2024 edition"
+  finishers_women_pct: 21
+  finishers_women_pct_source: "https://marathonhandbook.com/valencia-marathon-sub-3-hour-finishers/ (Marathon Handbook citing official statistics, Dec 2024) — '21 percent of the field, with 6,100 participants' at the 1 Dec 2024 edition"
+  volunteers: 2500
+  volunteers_source: "https://runningcv.com/el-medio-y-el-maraton-valencia-buscan-4-000-voluntarios/ (Running CV citing SD Correcaminos volunteer recruitment) — 2,500 volunteers needed for the 42km marathon (vs 1,500 for the half) at the 2024 edition"
+
+# --- World Marathon Majors (2025 editions) ---
+
+baa-boston-marathon:
+  spectators: 500000
+  spectators_source: "https://www.meetboston.com/events/festivals-and-annual-events/boston-marathon/ (Meet Boston / Greater Boston Convention & Visitors Bureau, 2025-26 edition page) — 'attracts 500,000 spectators each year, making it New England's most widely viewed sporting event'"
+
+tcs-london-marathon:
+  spectators: 800000
+  spectators_source: "https://www.marathons.com/en/save-the-date/london-marathon-2025-key-figures-from-a-supersonic-edition/ (Marathons.com, Apr 2025) — 'approximately 800,000 gathered along the course' at the 27 Apr 2025 edition (56,640 finishers, Guinness-record)"
+
+tokyo-marathon:
+  volunteers: 10000
+  volunteers_source: "https://www.marathon.tokyo/en/news/detail/news_003573.html (Tokyo Marathon Foundation official volunteer report, 2 Mar 2025 edition) — 'about 10,000 volunteers who supported the event'"
+  prize_money_usd: 241000
+  prize_money_usd_source: "https://www.rrmonlineguide.com/events/2606 (Road Race Management Online Guide, Tokyo Marathon 2025 prize purse summary) — total purse $241,000 USD; winners $80,000 each gender; bonuses $200,000 (WR), $20,000 (CR), JPY 5,000,000 (NR)"
+
+bmw-berlin-marathon:
+  spectators: 1000000
+  spectators_source: "https://www.press.bmwgroup.com/global/article/detail/T0452880EN/sawe-and-wanjiru-win-the-2025-bmw-berlin-marathon-as-the-bmw-ix3-makes-its-race-debut?language=en (BMW Group press release, 21 Sep 2025) — 'roughly one million people lining the route through the German capital' at the 21 Sep 2025 edition"
+  volunteers: 5700
+  volunteers_source: "https://www.bmw-berlin-marathon.com/en/news-media/news/detail/bmw-berlin-marathon-2025-weekend-kicks-off-successfully (BMW Berlin Marathon official news, 20 Sep 2025) — 'over 5,700 volunteers' supported the 2025 weekend"
+  finishers_men_pct: 64.0
+  finishers_men_pct_source: "https://www.bmw-berlin-marathon.com/en/news-media/news/detail/bmw-berlin-marathon-expects-almost-80000-participants-from-160-nations (BMW Berlin Marathon official news, 2025 preview) — 'about 64% of the runners are male' among the 55,146 marathon-distance runners (proxy for finisher split given completion rate)"
+  finishers_women_pct: 35.0
+  finishers_women_pct_source: "https://www.bmw-berlin-marathon.com/en/news-media/news/detail/bmw-berlin-marathon-expects-almost-80000-participants-from-160-nations (BMW Berlin Marathon official news, 2025 preview) — '35% female' among the 55,146 marathon-distance runners; balance 0.1% non-binary"
+
+bank-of-america-chicago-marathon:
+  spectators: 1700000
+  spectators_source: "https://www.nbcchicago.com/news/local/2025-chicago-marathon-how-to-volunteer-at-one-of-the-worlds-biggest-races/3795050/ (NBC Chicago, Oct 2025) — '1.7 million enthusiastic spectators' cited from race organisers for the 12 Oct 2025 edition"
+  volunteers: 12000
+  volunteers_source: "https://www.nbcchicago.com/news/local/2025-chicago-marathon-how-to-volunteer-at-one-of-the-worlds-biggest-races/3795050/ (NBC Chicago, Oct 2025) — 'over 12,000 volunteers' for the 12 Oct 2025 edition"
+
+tcs-new-york-city-marathon:
+  spectators: 2000000
+  spectators_source: "https://www.marathons.com/en/save-the-date/the-key-numbers-behind-the-2025-new-york-city-marathon-a-record-breaking-edition/ (Marathons.com, 3 Nov 2025) — 'two million people filled the streets of New York' at the 2 Nov 2025 edition (59,226 finishers — world record)"
+  volunteers: 12000
+  volunteers_source: "https://www.marathons.com/en/save-the-date/the-key-numbers-behind-the-2025-new-york-city-marathon-a-record-breaking-edition/ (Marathons.com, 3 Nov 2025) — '~12,000 volunteers assisted the event'"
+  prize_money_usd: 1019000
+  prize_money_usd_source: "https://www.sportico.com/leagues/other-sports/2025/nyc-marathon-2025-winners-results-prize-money-1234875660/ (Sportico, 2 Nov 2025) — '$969,000 standard prize money' + '$50,000 course-record bonus' to Hellen Obiri = $1,019,000 actual payout at the 2 Nov 2025 edition"
+  highlights:
+    - title: "Hellen Obiri, Benson Kipruto, Marcel Hug, and Susannah Scaroni Win 2025 TCS New York City Marathon"
+      url: "https://www.nyrr.org/media-center/press-release/2025_1102_tcsnycmresults"
+      source: "NYRR official press release, 2025-11-02"
+    - title: "Obiri smashes long-standing course record to regain New York City Marathon title"
+      url: "https://worldathletics.org/competitions/world-athletics-label-road-races/news/obiri-new-york-marathon-course-record"
+      source: "World Athletics REPORT, 2025-11-02"
+    - title: "NYRR Breaks Record AGAIN as 2025 TCS New York City Marathon Becomes World's Largest Marathon Ever with 59,000+ Finishers"
+      url: "https://www.runningusa.org/industry-news/new-york-road-runners-breaks-record-again-as-2025-tcs-new-york-city-marathon-becomes-worlds-largest-marathon-ever-with-59000-finishers/"
+      source: "Running USA, 2025-11-03"
+    - title: "Hellen Obiri shatters 22-year-old course record at 2025 TCS New York City Marathon"
+      url: "https://runningmagazine.ca/sections/runs-races/nyc-marathon/hellen-obiri-shatters-22-year-old-course-record-at-2025-tcs-new-york-city-marathon/"
+      source: "Canadian Running Magazine, 2025-11-02"
+    - title: "Hellen Obiri Smashes NYC Marathon Course Record, 2:20 Barrier Falls"
+      url: "https://www.letsrun.com/news/2025/11/hellen-obiri-smashes-new-york-city-marathon-course-record-as-220-barrier-falls/"
+      source: "LetsRun, 2025-11-02"
+    - title: "TCS New York City Marathon (Results) — World Athletics Platinum Label"
+      url: "https://worldathletics.org/competition/calendar-results/results/7219840"
+      source: "World Athletics, 2025-11-02"
+
+tcs-sydney-marathon-presented-by-asics:
+  volunteers: 4500
+  volunteers_source: "https://www.tcssydneymarathon.com/volunteers (TCS Sydney Marathon official volunteer page, 2025 edition) — 'we engage over 4,500 volunteers' for the 31 Aug 2025 edition (inaugural Abbott WMM)"
