@@ -10,7 +10,7 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8765
 ```
 
-Open http://127.0.0.1:8765/
+
 
 ## What's there
 
